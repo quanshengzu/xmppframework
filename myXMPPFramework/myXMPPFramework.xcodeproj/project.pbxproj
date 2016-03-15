@@ -12,7 +12,6 @@
 		54D7B2881C980027000AC3C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2871C980027000AC3C5 /* ViewController.m */; };
 		54D7B28B1C980028000AC3C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D7B2891C980028000AC3C5 /* Main.storyboard */; };
 		54D7B28D1C980028000AC3C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54D7B28C1C980028000AC3C5 /* Assets.xcassets */; };
-		54D7B2901C980028000AC3C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D7B28E1C980028000AC3C5 /* LaunchScreen.storyboard */; };
 		54D7B2A11C980219000AC3C5 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2A01C980219000AC3C5 /* GCDAsyncSocket.m */; };
 		54D7B2B31C98022E000AC3C5 /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2A41C98022E000AC3C5 /* DDAbstractDatabaseLogger.m */; };
 		54D7B2B41C98022E000AC3C5 /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2A61C98022E000AC3C5 /* DDASLLogger.m */; };
@@ -143,6 +142,14 @@
 		54D7B4691C980345000AC3C5 /* XMPPSRVResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B3F71C980345000AC3C5 /* XMPPSRVResolver.m */; };
 		54D7B46A1C980345000AC3C5 /* XMPPStringPrep.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B3F91C980345000AC3C5 /* XMPPStringPrep.m */; };
 		54D7B46C1C980362000AC3C5 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D7B46B1C980362000AC3C5 /* libresolv.tbd */; };
+		54D7B4721C9822B9000AC3C5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D7B4711C9822B9000AC3C5 /* Login.storyboard */; };
+		54D7B4751C9828A4000AC3C5 /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4741C9828A4000AC3C5 /* YXLoginViewController.m */; };
+		54D7B4841C982FE6000AC3C5 /* UIButton+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4791C982FE6000AC3C5 /* UIButton+WF.m */; };
+		54D7B4851C982FE6000AC3C5 /* UIImage+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47B1C982FE6000AC3C5 /* UIImage+WF.m */; };
+		54D7B4861C982FE6000AC3C5 /* UIScreen+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47D1C982FE6000AC3C5 /* UIScreen+WF.m */; };
+		54D7B4871C982FE6000AC3C5 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47F1C982FE6000AC3C5 /* UIStoryboard+WF.m */; };
+		54D7B4881C982FE6000AC3C5 /* UITextField+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */; };
+		54D7B4891C982FE6000AC3C5 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4831C982FE6000AC3C5 /* UIView+WF.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,7 +161,6 @@
 		54D7B2871C980027000AC3C5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		54D7B28A1C980028000AC3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		54D7B28C1C980028000AC3C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		54D7B28F1C980028000AC3C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54D7B2911C980028000AC3C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54D7B29F1C980219000AC3C5 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		54D7B2A01C980219000AC3C5 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
@@ -424,6 +430,22 @@
 		54D7B46B1C980362000AC3C5 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		54D7B46D1C98038F000AC3C5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		54D7B46E1C980411000AC3C5 /* XMPPFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
+		54D7B4711C9822B9000AC3C5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = myXMPPFramework/Login.storyboard; sourceTree = SOURCE_ROOT; };
+		54D7B4731C9828A4000AC3C5 /* YXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXLoginViewController.h; path = myXMPPFramework/YXLoginViewController.h; sourceTree = SOURCE_ROOT; };
+		54D7B4741C9828A4000AC3C5 /* YXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXLoginViewController.m; path = myXMPPFramework/YXLoginViewController.m; sourceTree = SOURCE_ROOT; };
+		54D7B4771C982FE6000AC3C5 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
+		54D7B4781C982FE6000AC3C5 /* UIButton+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WF.h"; sourceTree = "<group>"; };
+		54D7B4791C982FE6000AC3C5 /* UIButton+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WF.m"; sourceTree = "<group>"; };
+		54D7B47A1C982FE6000AC3C5 /* UIImage+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WF.h"; sourceTree = "<group>"; };
+		54D7B47B1C982FE6000AC3C5 /* UIImage+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WF.m"; sourceTree = "<group>"; };
+		54D7B47C1C982FE6000AC3C5 /* UIScreen+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScreen+WF.h"; sourceTree = "<group>"; };
+		54D7B47D1C982FE6000AC3C5 /* UIScreen+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScreen+WF.m"; sourceTree = "<group>"; };
+		54D7B47E1C982FE6000AC3C5 /* UIStoryboard+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIStoryboard+WF.h"; sourceTree = "<group>"; };
+		54D7B47F1C982FE6000AC3C5 /* UIStoryboard+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIStoryboard+WF.m"; sourceTree = "<group>"; };
+		54D7B4801C982FE6000AC3C5 /* UITextField+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+WF.h"; sourceTree = "<group>"; };
+		54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WF.m"; sourceTree = "<group>"; };
+		54D7B4821C982FE6000AC3C5 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
+		54D7B4831C982FE6000AC3C5 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -466,7 +488,6 @@
 				54D7B2871C980027000AC3C5 /* ViewController.m */,
 				54D7B2891C980028000AC3C5 /* Main.storyboard */,
 				54D7B28C1C980028000AC3C5 /* Assets.xcassets */,
-				54D7B28E1C980028000AC3C5 /* LaunchScreen.storyboard */,
 				54D7B2911C980028000AC3C5 /* Info.plist */,
 				54D7B2801C980027000AC3C5 /* Supporting Files */,
 			);
@@ -487,6 +508,7 @@
 			children = (
 				54D7B2981C98018B000AC3C5 /* Lib */,
 				54D7B29C1C98018B000AC3C5 /* Main */,
+				54D7B4701C98224D000AC3C5 /* Login */,
 				54D7B29D1C98018B000AC3C5 /* Others */,
 			);
 			path = Classes;
@@ -495,6 +517,7 @@
 		54D7B2981C98018B000AC3C5 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				54D7B4761C982FB9000AC3C5 /* Category */,
 				54D7B29A1C98018B000AC3C5 /* XMPP */,
 			);
 			path = Lib;
@@ -1300,6 +1323,37 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		54D7B4701C98224D000AC3C5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				54D7B4711C9822B9000AC3C5 /* Login.storyboard */,
+				54D7B4731C9828A4000AC3C5 /* YXLoginViewController.h */,
+				54D7B4741C9828A4000AC3C5 /* YXLoginViewController.m */,
+			);
+			name = Login;
+			path = "Login(登录)";
+			sourceTree = "<group>";
+		};
+		54D7B4761C982FB9000AC3C5 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				54D7B4771C982FE6000AC3C5 /* CategoryWF.h */,
+				54D7B4781C982FE6000AC3C5 /* UIButton+WF.h */,
+				54D7B4791C982FE6000AC3C5 /* UIButton+WF.m */,
+				54D7B47A1C982FE6000AC3C5 /* UIImage+WF.h */,
+				54D7B47B1C982FE6000AC3C5 /* UIImage+WF.m */,
+				54D7B47C1C982FE6000AC3C5 /* UIScreen+WF.h */,
+				54D7B47D1C982FE6000AC3C5 /* UIScreen+WF.m */,
+				54D7B47E1C982FE6000AC3C5 /* UIStoryboard+WF.h */,
+				54D7B47F1C982FE6000AC3C5 /* UIStoryboard+WF.m */,
+				54D7B4801C982FE6000AC3C5 /* UITextField+WF.h */,
+				54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */,
+				54D7B4821C982FE6000AC3C5 /* UIView+WF.h */,
+				54D7B4831C982FE6000AC3C5 /* UIView+WF.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1326,6 +1380,7 @@
 		54D7B2751C980027000AC3C5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = YX;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = yanxiang;
 				TargetAttributes = {
@@ -1359,9 +1414,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				54D7B2C01C980241000AC3C5 /* build-libidn.sh in Resources */,
-				54D7B2901C980028000AC3C5 /* LaunchScreen.storyboard in Resources */,
 				54D7B28D1C980028000AC3C5 /* Assets.xcassets in Resources */,
 				54D7B2BA1C98022E000AC3C5 /* README.txt in Resources */,
+				54D7B4721C9822B9000AC3C5 /* Login.storyboard in Resources */,
 				54D7B28B1C980028000AC3C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1390,6 +1445,7 @@
 				54D7B4381C980345000AC3C5 /* XMPPvCardTempEmail.m in Sources */,
 				54D7B42C1C980345000AC3C5 /* XMPPMessage+XEP0045.m in Sources */,
 				54D7B43C1C980345000AC3C5 /* NSXMLElement+XEP_0059.m in Sources */,
+				54D7B4751C9828A4000AC3C5 /* YXLoginViewController.m in Sources */,
 				54D7B2881C980027000AC3C5 /* ViewController.m in Sources */,
 				54D7B2B41C98022E000AC3C5 /* DDASLLogger.m in Sources */,
 				54D7B4091C980345000AC3C5 /* XMPPParser.m in Sources */,
@@ -1407,6 +1463,7 @@
 				54D7B4571C980345000AC3C5 /* XMPPMessageDeliveryReceipts.m in Sources */,
 				54D7B45F1C980345000AC3C5 /* XMPPAttentionModule.m in Sources */,
 				54D7B4041C980345000AC3C5 /* XMPPElement.m in Sources */,
+				54D7B4871C982FE6000AC3C5 /* UIStoryboard+WF.m in Sources */,
 				54D7B4651C980345000AC3C5 /* DDList.m in Sources */,
 				54D7B4491C980345000AC3C5 /* XMPPCapabilities.xcdatamodel in Sources */,
 				54D7B4241C980345000AC3C5 /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
@@ -1426,6 +1483,7 @@
 				54D7B4221C980345000AC3C5 /* XMPPRoomCoreDataStorage.m in Sources */,
 				54D7B40F1C980345000AC3C5 /* XMPPProcessOne.m in Sources */,
 				54D7B4501C980345000AC3C5 /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
+				54D7B4841C982FE6000AC3C5 /* UIButton+WF.m in Sources */,
 				54D7B4611C980345000AC3C5 /* NSXMLElement+XEP_0297.m in Sources */,
 				54D7B43A1C980345000AC3C5 /* XMPPvCardTempModule.m in Sources */,
 				54D7B44A1C980345000AC3C5 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
@@ -1440,10 +1498,13 @@
 				54D7B4551C980345000AC3C5 /* XMPPPresence+XEP_0172.m in Sources */,
 				54D7B4331C980345000AC3C5 /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
 				54D7B2B71C98022E000AC3C5 /* DDTTYLogger.m in Sources */,
+				54D7B4881C982FE6000AC3C5 /* UITextField+WF.m in Sources */,
 				54D7B4251C980345000AC3C5 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
+				54D7B4861C982FE6000AC3C5 /* UIScreen+WF.m in Sources */,
 				54D7B4511C980345000AC3C5 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
 				54D7B4021C980345000AC3C5 /* NSNumber+XMPP.m in Sources */,
 				54D7B4451C980345000AC3C5 /* XMPPMessage+XEP_0085.m in Sources */,
+				54D7B4891C982FE6000AC3C5 /* UIView+WF.m in Sources */,
 				54D7B42D1C980345000AC3C5 /* XMPPMUC.m in Sources */,
 				54D7B4171C980345000AC3C5 /* XMPPRosterMemoryStorage.m in Sources */,
 				54D7B4581C980345000AC3C5 /* XMPPBlocking.m in Sources */,
@@ -1479,6 +1540,7 @@
 				54D7B41A1C980345000AC3C5 /* XMPPSystemInputActivityMonitor.m in Sources */,
 				54D7B2B61C98022E000AC3C5 /* DDLog.m in Sources */,
 				54D7B2851C980027000AC3C5 /* AppDelegate.m in Sources */,
+				54D7B4851C982FE6000AC3C5 /* UIImage+WF.m in Sources */,
 				54D7B2B91C98022E000AC3C5 /* DispatchQueueLogFormatter.m in Sources */,
 				54D7B4191C980345000AC3C5 /* XMPPRoster.m in Sources */,
 				54D7B4231C980345000AC3C5 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
@@ -1513,14 +1575,6 @@
 				54D7B28A1C980028000AC3C5 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		54D7B28E1C980028000AC3C5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				54D7B28F1C980028000AC3C5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1610,6 +1664,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PREFIX_HEADER = myXMPPFramework/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = myXMPPFramework/Info.plist;
@@ -1629,6 +1684,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				GCC_PREFIX_HEADER = myXMPPFramework/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = myXMPPFramework/Info.plist;
