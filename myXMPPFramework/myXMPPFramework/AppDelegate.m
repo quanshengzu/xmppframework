@@ -46,8 +46,6 @@
 {
     
     
-    [self connectToHost];
-    
     return YES;
 }
 
@@ -66,6 +64,7 @@
 #pragma mark -连接服务器，向服务器发送myJID
 - (void)connectToHost
 {
+    NSLog(@"正在连接到服务器...");
     if (_xmppStream == nil)
     {
         [self setupxmppStream];
@@ -78,7 +77,11 @@
      第三个参数：表示资源名：iphone android
      
      */
-    XMPPJID *myJID = [XMPPJID jidWithUser:@"zhangsan" domain:@"127.0.0.1" resource:@"iphone"];
+    
+    // 从沙盒中获得账户名
+    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    
+    XMPPJID *myJID = [XMPPJID jidWithUser:username domain:@"127.0.0.1" resource:@"iphone"];
     _xmppStream.myJID = myJID;
     
     NSError *error = nil;
@@ -91,7 +94,11 @@
 #pragma mark - 连接服务器成功后，向服务器发送password进行授权认证
 - (void)sendPwdToHost
 {
-    NSString *password = @"123456";
+    NSLog(@"向服务器发送password进行授权认证...");
+    // 从沙盒中获得密码
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    
+//    NSString *password = @"123456";
     NSError *error = nil;
     if (![_xmppStream authenticateWithPassword:password error:&error])
     {
@@ -102,6 +109,7 @@
 #pragma mark - 授权成功后，向服务器发送"在线"消息
 - (void)sendOnLineToHost
 {
+    NSLog(@"向服务器发送‘在线’消息");
     XMPPPresence *online = [XMPPPresence presence];
     [_xmppStream sendElement:online];
 }
@@ -122,6 +130,13 @@
     
     // 授权成功后，向服务器发送"在线"消息
     [self sendOnLineToHost];
+}
+
+
+#pragma mark - 登录
+- (void)login
+{
+    [self connectToHost];
 }
 
 

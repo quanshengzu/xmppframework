@@ -7,6 +7,12 @@
 //
 
 #import "YXLoginViewController.h"
+#import "AppDelegate.h"
+
+/*
+ 首先要在服务器openfire管理后台新建用户，然后在操作相应的用户
+ 
+ */
 
 @interface YXLoginViewController ()
 
@@ -39,6 +45,21 @@
 // 点击登录按钮
 - (IBAction)loginBtnDidClick:(id)sender
 {
+    // 获得帐号和密码
+    NSString *username = self.username.text;
+    NSString *password = self.password.text;
+    
+    // 将帐号和密码保存到沙盒
+    // 获得偏好设置
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    [userDefault setObject:username forKey:@"username"];
+    [userDefault setObject:password forKey:@"password"];
+    
+    // 获得appDelegate
+    AppDelegate *app = ( AppDelegate *)[UIApplication sharedApplication].delegate;
+    // 登录
+    [app login];
+    
     
 }
 

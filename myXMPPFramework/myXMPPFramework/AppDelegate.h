@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+// 登录
+- (void)login;
+
 
 @end
 
