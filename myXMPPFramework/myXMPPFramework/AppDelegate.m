@@ -74,7 +74,7 @@
     /*
      第一个参数：用户名
      第二个参数：服务器的域名
-     第三个参数：表示资源名：iphone android
+     第三个参数：标示用户登录的客户端：iphone android
      
      */
     
@@ -83,6 +83,14 @@
     
     XMPPJID *myJID = [XMPPJID jidWithUser:username domain:@"127.0.0.1" resource:@"iphone"];
     _xmppStream.myJID = myJID;
+    
+    // 设置服务器域名,不仅是域名还可以是IP地址
+    _xmppStream.hostName = @"127.0.0.1";
+    
+    // 设置端口号,如果端口号是5222，可以省略
+    _xmppStream.hostPort = 5222;
+    
+    
     
     NSError *error = nil;
     if (![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])

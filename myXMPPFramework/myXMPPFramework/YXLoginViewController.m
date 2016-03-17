@@ -55,6 +55,9 @@
     [userDefault setObject:username forKey:@"username"];
     [userDefault setObject:password forKey:@"password"];
     
+    // 同步
+    [userDefault synchronize];
+    
     // 获得appDelegate
     AppDelegate *app = ( AppDelegate *)[UIApplication sharedApplication].delegate;
     // 登录

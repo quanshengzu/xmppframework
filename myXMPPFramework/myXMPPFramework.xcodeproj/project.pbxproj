@@ -1719,6 +1719,7 @@
 				54D7B2961C980028000AC3C5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
