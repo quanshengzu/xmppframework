@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D131C9A7A6700653A6B /* Login.storyboard */; };
+		54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D16D151C9A7A6700653A6B /* YXLoginViewController.m */; };
+		54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D181C9A7CA500653A6B /* Main.storyboard */; };
 		54D7B2821C980027000AC3C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2811C980027000AC3C5 /* main.m */; };
 		54D7B2851C980027000AC3C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2841C980027000AC3C5 /* AppDelegate.m */; };
 		54D7B2881C980027000AC3C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2871C980027000AC3C5 /* ViewController.m */; };
@@ -142,17 +145,21 @@
 		54D7B4691C980345000AC3C5 /* XMPPSRVResolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B3F71C980345000AC3C5 /* XMPPSRVResolver.m */; };
 		54D7B46A1C980345000AC3C5 /* XMPPStringPrep.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B3F91C980345000AC3C5 /* XMPPStringPrep.m */; };
 		54D7B46C1C980362000AC3C5 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 54D7B46B1C980362000AC3C5 /* libresolv.tbd */; };
-		54D7B4721C9822B9000AC3C5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D7B4711C9822B9000AC3C5 /* Login.storyboard */; };
-		54D7B4751C9828A4000AC3C5 /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4741C9828A4000AC3C5 /* YXLoginViewController.m */; };
 		54D7B4841C982FE6000AC3C5 /* UIButton+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4791C982FE6000AC3C5 /* UIButton+WF.m */; };
 		54D7B4851C982FE6000AC3C5 /* UIImage+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47B1C982FE6000AC3C5 /* UIImage+WF.m */; };
 		54D7B4861C982FE6000AC3C5 /* UIScreen+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47D1C982FE6000AC3C5 /* UIScreen+WF.m */; };
 		54D7B4871C982FE6000AC3C5 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47F1C982FE6000AC3C5 /* UIStoryboard+WF.m */; };
 		54D7B4881C982FE6000AC3C5 /* UITextField+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */; };
 		54D7B4891C982FE6000AC3C5 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4831C982FE6000AC3C5 /* UIView+WF.m */; };
+		7AC12966F0352DF2EBA15FBA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B694514723F297E4B5D3F70A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01A37AC4E6760936E87F5E35 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		54D16D131C9A7A6700653A6B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		54D16D141C9A7A6700653A6B /* YXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLoginViewController.h; sourceTree = "<group>"; };
+		54D16D151C9A7A6700653A6B /* YXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLoginViewController.m; sourceTree = "<group>"; };
+		54D16D181C9A7CA500653A6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		54D7B27D1C980027000AC3C5 /* myXMPPFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myXMPPFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D7B2811C980027000AC3C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54D7B2831C980027000AC3C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -430,9 +437,6 @@
 		54D7B46B1C980362000AC3C5 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		54D7B46D1C98038F000AC3C5 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		54D7B46E1C980411000AC3C5 /* XMPPFramework.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
-		54D7B4711C9822B9000AC3C5 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = myXMPPFramework/Login.storyboard; sourceTree = SOURCE_ROOT; };
-		54D7B4731C9828A4000AC3C5 /* YXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YXLoginViewController.h; path = myXMPPFramework/YXLoginViewController.h; sourceTree = SOURCE_ROOT; };
-		54D7B4741C9828A4000AC3C5 /* YXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YXLoginViewController.m; path = myXMPPFramework/YXLoginViewController.m; sourceTree = SOURCE_ROOT; };
 		54D7B4771C982FE6000AC3C5 /* CategoryWF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryWF.h; sourceTree = "<group>"; };
 		54D7B4781C982FE6000AC3C5 /* UIButton+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+WF.h"; sourceTree = "<group>"; };
 		54D7B4791C982FE6000AC3C5 /* UIButton+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WF.m"; sourceTree = "<group>"; };
@@ -446,6 +450,8 @@
 		54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WF.m"; sourceTree = "<group>"; };
 		54D7B4821C982FE6000AC3C5 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
 		54D7B4831C982FE6000AC3C5 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
+		B694514723F297E4B5D3F70A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3E2D54CF70B42D496B0244 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,12 +462,32 @@
 				54D7B46C1C980362000AC3C5 /* libresolv.tbd in Frameworks */,
 				54D7B2D41C98026F000AC3C5 /* libxml2.tbd in Frameworks */,
 				54D7B2C11C980241000AC3C5 /* libidn.a in Frameworks */,
+				7AC12966F0352DF2EBA15FBA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231E2FF394D7840343458749 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA3E2D54CF70B42D496B0244 /* Pods.debug.xcconfig */,
+				01A37AC4E6760936E87F5E35 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		54D16D121C9A7A6700653A6B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				54D16D131C9A7A6700653A6B /* Login.storyboard */,
+				54D16D141C9A7A6700653A6B /* YXLoginViewController.h */,
+				54D16D151C9A7A6700653A6B /* YXLoginViewController.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		54D7B2741C980027000AC3C5 = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +495,8 @@
 				54D7B2D31C98026F000AC3C5 /* libxml2.tbd */,
 				54D7B27F1C980027000AC3C5 /* myXMPPFramework */,
 				54D7B27E1C980027000AC3C5 /* Products */,
+				231E2FF394D7840343458749 /* Pods */,
+				C6B067D9052490D0F8392C0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -506,9 +534,9 @@
 		54D7B2971C98018B000AC3C5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				54D16D121C9A7A6700653A6B /* Login */,
 				54D7B2981C98018B000AC3C5 /* Lib */,
 				54D7B29C1C98018B000AC3C5 /* Main */,
-				54D7B4701C98224D000AC3C5 /* Login */,
 				54D7B29D1C98018B000AC3C5 /* Others */,
 			);
 			path = Classes;
@@ -551,6 +579,7 @@
 		54D7B29C1C98018B000AC3C5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				54D16D181C9A7CA500653A6B /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1323,17 +1352,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		54D7B4701C98224D000AC3C5 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				54D7B4711C9822B9000AC3C5 /* Login.storyboard */,
-				54D7B4731C9828A4000AC3C5 /* YXLoginViewController.h */,
-				54D7B4741C9828A4000AC3C5 /* YXLoginViewController.m */,
-			);
-			name = Login;
-			path = "Login(登录)";
-			sourceTree = "<group>";
-		};
 		54D7B4761C982FB9000AC3C5 /* Category */ = {
 			isa = PBXGroup;
 			children = (
@@ -1354,6 +1372,14 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		C6B067D9052490D0F8392C0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B694514723F297E4B5D3F70A /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1361,9 +1387,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 54D7B2941C980028000AC3C5 /* Build configuration list for PBXNativeTarget "myXMPPFramework" */;
 			buildPhases = (
+				E8F63A6171D8BE54881F8A9B /* Check Pods Manifest.lock */,
 				54D7B2791C980027000AC3C5 /* Sources */,
 				54D7B27A1C980027000AC3C5 /* Frameworks */,
 				54D7B27B1C980027000AC3C5 /* Resources */,
+				92CFA6F1C705E2D4D2FE25FE /* Embed Pods Frameworks */,
+				FA7B97AF5337C2FBAE384D13 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1416,12 +1445,61 @@
 				54D7B2C01C980241000AC3C5 /* build-libidn.sh in Resources */,
 				54D7B28D1C980028000AC3C5 /* Assets.xcassets in Resources */,
 				54D7B2BA1C98022E000AC3C5 /* README.txt in Resources */,
-				54D7B4721C9822B9000AC3C5 /* Login.storyboard in Resources */,
+				54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */,
+				54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */,
 				54D7B28B1C980028000AC3C5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		92CFA6F1C705E2D4D2FE25FE /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8F63A6171D8BE54881F8A9B /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FA7B97AF5337C2FBAE384D13 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		54D7B2791C980027000AC3C5 /* Sources */ = {
@@ -1445,7 +1523,6 @@
 				54D7B4381C980345000AC3C5 /* XMPPvCardTempEmail.m in Sources */,
 				54D7B42C1C980345000AC3C5 /* XMPPMessage+XEP0045.m in Sources */,
 				54D7B43C1C980345000AC3C5 /* NSXMLElement+XEP_0059.m in Sources */,
-				54D7B4751C9828A4000AC3C5 /* YXLoginViewController.m in Sources */,
 				54D7B2881C980027000AC3C5 /* ViewController.m in Sources */,
 				54D7B2B41C98022E000AC3C5 /* DDASLLogger.m in Sources */,
 				54D7B4091C980345000AC3C5 /* XMPPParser.m in Sources */,
@@ -1479,6 +1556,7 @@
 				54D7B4301C980345000AC3C5 /* XMPPvCardAvatarCoreDataStorageObject.m in Sources */,
 				54D7B3FA1C980345000AC3C5 /* XMPPAnonymousAuthentication.m in Sources */,
 				54D7B2D21C98024C000AC3C5 /* DDXMLNode.m in Sources */,
+				54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */,
 				54D7B4691C980345000AC3C5 /* XMPPSRVResolver.m in Sources */,
 				54D7B4221C980345000AC3C5 /* XMPPRoomCoreDataStorage.m in Sources */,
 				54D7B40F1C980345000AC3C5 /* XMPPProcessOne.m in Sources */,
@@ -1662,6 +1740,7 @@
 		};
 		54D7B2951C980028000AC3C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA3E2D54CF70B42D496B0244 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1682,6 +1761,7 @@
 		};
 		54D7B2961C980028000AC3C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01A37AC4E6760936E87F5E35 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";

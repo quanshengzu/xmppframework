@@ -15,6 +15,7 @@
  2.连接服务器，向服务器发送myJID
  3.连接服务器成功后，向服务器发送password进行授权认证
  4.授权成功后，向服务器发送"在线"消息
+ 5.登录完成后跳转到主界面
  
  */
 
@@ -35,6 +36,9 @@
 
 // 4.授权成功后，向服务器发送"在线"消息
 - (void)sendOnLineToHost;
+
+// 保存登录结果block
+@property (nonatomic, copy)XMPPResultBlock xmppResultBlock;
 
 
 @end
@@ -81,7 +85,10 @@
     // 从沙盒中获得账户名
     NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     
-    XMPPJID *myJID = [XMPPJID jidWithUser:username domain:@"127.0.0.1" resource:@"iphone"];
+    // 获得当前客户端
+    NSString *model = [UIDevice currentDevice].localizedModel;
+    
+    XMPPJID *myJID = [XMPPJID jidWithUser:username domain:@"127.0.0.1" resource:model];
     _xmppStream.myJID = myJID;
     
     // 设置服务器域名,不仅是域名还可以是IP地址
@@ -131,6 +138,13 @@
     [self sendPwdToHost];
 }
 
+#pragma mark - 连接失败的回调
+- (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
+{
+    NSLog(@"连接失败");
+    NSLog(@"error:%@",error);
+}
+
 #pragma mark - 密码认证成功后的回调
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
@@ -138,12 +152,50 @@
     
     // 授权成功后，向服务器发送"在线"消息
     [self sendOnLineToHost];
+    
+    // 判断block有误值，然后再回调给登录控制器
+    if (_xmppResultBlock)
+    {
+        _xmppResultBlock(XMPPResultTypeSuccess);
+    }
+    
+    
+}
+
+#pragma mark - 登录失败
+- (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
+{
+    NSLog(@"登录失败");
+    NSLog(@"error:%@",error);
+    
+    // 判断block有误值，然后再回调给登录控制器
+    if (_xmppResultBlock)
+    {
+        _xmppResultBlock(XMPPResultTypeFailure);
+    }
+    
+    
+}
+
+#pragma mark - 注销连接
+- (void)xmppUserLogout
+{
+    // 1.发送离线消息
+    XMPPPresence *offline = [XMPPPresence presenceWithType:@"unavailable"];
+    [_xmppStream sendElement:offline];
+    
+    // 2.断开连接
+    [_xmppStream disconnect];
 }
 
 
 #pragma mark - 登录
-- (void)login
+- (void)xmppUserLogin:(XMPPResultBlock)xmppResultBlock
 {
+    // 1.将block保存起来
+    _xmppResultBlock = xmppResultBlock;
+    
+    // 2.连接到服务器
     [self connectToHost];
 }
 
