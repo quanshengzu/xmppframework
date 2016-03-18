@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
 		54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D131C9A7A6700653A6B /* Login.storyboard */; };
 		54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D16D151C9A7A6700653A6B /* YXLoginViewController.m */; };
 		54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D181C9A7CA500653A6B /* Main.storyboard */; };
@@ -156,10 +157,13 @@
 
 /* Begin PBXFileReference section */
 		01A37AC4E6760936E87F5E35 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXOtherLoginViewController.h; sourceTree = "<group>"; };
+		5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXOtherLoginViewController.m; sourceTree = "<group>"; };
 		54D16D131C9A7A6700653A6B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		54D16D141C9A7A6700653A6B /* YXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLoginViewController.h; sourceTree = "<group>"; };
 		54D16D151C9A7A6700653A6B /* YXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLoginViewController.m; sourceTree = "<group>"; };
 		54D16D181C9A7CA500653A6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		54D16D1A1C9AF7FB00653A6B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		54D7B27D1C980027000AC3C5 /* myXMPPFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myXMPPFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D7B2811C980027000AC3C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54D7B2831C980027000AC3C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -484,6 +488,8 @@
 				54D16D131C9A7A6700653A6B /* Login.storyboard */,
 				54D16D141C9A7A6700653A6B /* YXLoginViewController.h */,
 				54D16D151C9A7A6700653A6B /* YXLoginViewController.m */,
+				5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */,
+				5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1375,6 +1381,7 @@
 		C6B067D9052490D0F8392C0C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				54D16D1A1C9AF7FB00653A6B /* AVKit.framework */,
 				B694514723F297E4B5D3F70A /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -1620,6 +1627,7 @@
 				54D7B2851C980027000AC3C5 /* AppDelegate.m in Sources */,
 				54D7B4851C982FE6000AC3C5 /* UIImage+WF.m in Sources */,
 				54D7B2B91C98022E000AC3C5 /* DispatchQueueLogFormatter.m in Sources */,
+				5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */,
 				54D7B4191C980345000AC3C5 /* XMPPRoster.m in Sources */,
 				54D7B4231C980345000AC3C5 /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,
 				54D7B4371C980345000AC3C5 /* XMPPvCardTempBase.m in Sources */,
@@ -1753,7 +1761,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/myXMPPFramework/Classes/Lib/XMPP/Vendor/libidn",
 				);
-				OTHER_LDFLAGS = "-lxml2";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-lxml2",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yanxiang.myXMPPFramework;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

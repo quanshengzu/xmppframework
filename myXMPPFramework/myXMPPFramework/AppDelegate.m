@@ -68,7 +68,7 @@
 #pragma mark -连接服务器，向服务器发送myJID
 - (void)connectToHost
 {
-    NSLog(@"正在连接到服务器...");
+    YXLog(@"正在连接到服务器...");
     if (_xmppStream == nil)
     {
         [self setupxmppStream];
@@ -102,14 +102,14 @@
     NSError *error = nil;
     if (![_xmppStream connectWithTimeout:XMPPStreamTimeoutNone error:&error])
     {
-        NSLog(@"error:%@",error);
+        YXLog(@"error:%@",error);
     }
 }
 
 #pragma mark - 连接服务器成功后，向服务器发送password进行授权认证
 - (void)sendPwdToHost
 {
-    NSLog(@"向服务器发送password进行授权认证...");
+    YXLog(@"向服务器发送password进行授权认证...");
     // 从沙盒中获得密码
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     
@@ -117,14 +117,14 @@
     NSError *error = nil;
     if (![_xmppStream authenticateWithPassword:password error:&error])
     {
-        NSLog(@"密码认证失败:%@",error);
+        YXLog(@"密码认证失败:%@",error);
     }
 }
 
 #pragma mark - 授权成功后，向服务器发送"在线"消息
 - (void)sendOnLineToHost
 {
-    NSLog(@"向服务器发送‘在线’消息");
+    YXLog(@"向服务器发送‘在线’消息");
     XMPPPresence *online = [XMPPPresence presence];
     [_xmppStream sendElement:online];
 }
@@ -133,7 +133,7 @@
 #pragma mark - 连接成功后的回调
 - (void)xmppStreamDidConnect:(XMPPStream *)sender
 {
-    NSLog(@"连接服务器成功");
+    YXLog(@"连接服务器成功");
     // 连接服务器成功后，向服务器发送password进行授权认证
     [self sendPwdToHost];
 }
@@ -141,19 +141,24 @@
 #pragma mark - 连接失败的回调
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
 {
-    NSLog(@"连接失败");
-    NSLog(@"error:%@",error);
+    YXLog(@"与主机断开连接");
+    YXLog(@"error:%@",error);
+    
+    if (error && _xmppResultBlock)
+    {
+        _xmppResultBlock(XMPPResultTypeNetError);
+    }
 }
 
 #pragma mark - 密码认证成功后的回调
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
-    NSLog(@"密码认证成功");
+    YXLog(@"密码认证成功");
     
     // 授权成功后，向服务器发送"在线"消息
     [self sendOnLineToHost];
     
-    // 判断block有误值，然后再回调给登录控制器
+    // 判断block有无值，然后再回调给登录控制器
     if (_xmppResultBlock)
     {
         _xmppResultBlock(XMPPResultTypeSuccess);
@@ -165,10 +170,10 @@
 #pragma mark - 登录失败
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
 {
-    NSLog(@"登录失败");
-    NSLog(@"error:%@",error);
+    YXLog(@"登录失败");
+    YXLog(@"error:%@",error);
     
-    // 判断block有误值，然后再回调给登录控制器
+    // 判断block有无值，然后再回调给登录控制器
     if (_xmppResultBlock)
     {
         _xmppResultBlock(XMPPResultTypeFailure);
@@ -195,7 +200,10 @@
     // 1.将block保存起来
     _xmppResultBlock = xmppResultBlock;
     
-    // 2.连接到服务器
+    // 2.断开之前的连接
+   [_xmppStream disconnect];
+    
+    // 3.连接到服务器
     [self connectToHost];
 }
 

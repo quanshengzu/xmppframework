@@ -16,3 +16,32 @@
 
 #import <UIKit/UIKit.h>
 #import "CategoryWF.h"
+
+// 自定义Log
+#ifdef DEBUG
+
+#define YXLog(...) NSLog(@"%s %d \n %@\n\n",__func__,__LINE__,[NSString stringWithFormat:__VA_ARGS__])
+
+#else
+#define YXLog(...)
+
+#endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
