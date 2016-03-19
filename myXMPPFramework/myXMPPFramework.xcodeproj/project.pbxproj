@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54229D411C9D7ED6009B471B /* YXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D401C9D7ED6009B471B /* YXNavigationController.m */; };
+		54229D441C9D8308009B471B /* YXLogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D431C9D8308009B471B /* YXLogoutViewController.m */; };
+		54229D471C9D9306009B471B /* YXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D461C9D9306009B471B /* YXUserInfo.m */; };
+		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
 		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
 		54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D131C9A7A6700653A6B /* Login.storyboard */; };
 		54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D16D151C9A7A6700653A6B /* YXLoginViewController.m */; };
@@ -157,6 +161,15 @@
 
 /* Begin PBXFileReference section */
 		01A37AC4E6760936E87F5E35 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		54229D3F1C9D7ED6009B471B /* YXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNavigationController.h; sourceTree = "<group>"; };
+		54229D401C9D7ED6009B471B /* YXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNavigationController.m; sourceTree = "<group>"; };
+		54229D421C9D8308009B471B /* YXLogoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLogoutViewController.h; sourceTree = "<group>"; };
+		54229D431C9D8308009B471B /* YXLogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLogoutViewController.m; sourceTree = "<group>"; };
+		54229D451C9D9306009B471B /* YXUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXUserInfo.h; sourceTree = "<group>"; };
+		54229D461C9D9306009B471B /* YXUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXUserInfo.m; sourceTree = "<group>"; };
+		54229D491C9D933C009B471B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		54229D4A1C9DA147009B471B /* YXBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBaseLoginViewController.h; sourceTree = "<group>"; };
+		54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBaseLoginViewController.m; sourceTree = "<group>"; };
 		5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXOtherLoginViewController.h; sourceTree = "<group>"; };
 		5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXOtherLoginViewController.m; sourceTree = "<group>"; };
 		54D16D131C9A7A6700653A6B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -482,6 +495,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		54229D3D1C9D7E8D009B471B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				54229D481C9D9318009B471B /* UserInfo */,
+				54229D3E1C9D7EB0009B471B /* CommonControllers */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		54229D3E1C9D7EB0009B471B /* CommonControllers */ = {
+			isa = PBXGroup;
+			children = (
+				54229D3F1C9D7ED6009B471B /* YXNavigationController.h */,
+				54229D401C9D7ED6009B471B /* YXNavigationController.m */,
+			);
+			name = CommonControllers;
+			sourceTree = "<group>";
+		};
+		54229D481C9D9318009B471B /* UserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				54229D491C9D933C009B471B /* Singleton.h */,
+				54229D451C9D9306009B471B /* YXUserInfo.h */,
+				54229D461C9D9306009B471B /* YXUserInfo.m */,
+			);
+			name = UserInfo;
+			sourceTree = "<group>";
+		};
 		54D16D121C9A7A6700653A6B /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +531,8 @@
 				54D16D151C9A7A6700653A6B /* YXLoginViewController.m */,
 				5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */,
 				5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */,
+				54229D4A1C9DA147009B471B /* YXBaseLoginViewController.h */,
+				54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -540,6 +583,7 @@
 		54D7B2971C98018B000AC3C5 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				54229D3D1C9D7E8D009B471B /* Common */,
 				54D16D121C9A7A6700653A6B /* Login */,
 				54D7B2981C98018B000AC3C5 /* Lib */,
 				54D7B29C1C98018B000AC3C5 /* Main */,
@@ -586,6 +630,8 @@
 			isa = PBXGroup;
 			children = (
 				54D16D181C9A7CA500653A6B /* Main.storyboard */,
+				54229D421C9D8308009B471B /* YXLogoutViewController.h */,
+				54229D431C9D8308009B471B /* YXLogoutViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1548,13 +1594,17 @@
 				54D7B45F1C980345000AC3C5 /* XMPPAttentionModule.m in Sources */,
 				54D7B4041C980345000AC3C5 /* XMPPElement.m in Sources */,
 				54D7B4871C982FE6000AC3C5 /* UIStoryboard+WF.m in Sources */,
+				54229D411C9D7ED6009B471B /* YXNavigationController.m in Sources */,
 				54D7B4651C980345000AC3C5 /* DDList.m in Sources */,
 				54D7B4491C980345000AC3C5 /* XMPPCapabilities.xcdatamodel in Sources */,
+				54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */,
 				54D7B4241C980345000AC3C5 /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				54D7B4201C980345000AC3C5 /* XMPPPrivacy.m in Sources */,
 				54D7B4431C980345000AC3C5 /* NSDate+XMPPDateTimeProfiles.m in Sources */,
 				54D7B4481C980345000AC3C5 /* NSString+XEP_0106.m in Sources */,
 				54D7B4601C980345000AC3C5 /* XMPPMessage+XEP_0224.m in Sources */,
+				54229D471C9D9306009B471B /* YXUserInfo.m in Sources */,
+				54229D441C9D8308009B471B /* YXLogoutViewController.m in Sources */,
 				54D7B4391C980345000AC3C5 /* XMPPvCardTempLabel.m in Sources */,
 				54D7B3FF1C980345000AC3C5 /* XMPPXFacebookPlatformAuthentication.m in Sources */,
 				54D7B2B81C98022E000AC3C5 /* ContextFilterLogFormatter.m in Sources */,

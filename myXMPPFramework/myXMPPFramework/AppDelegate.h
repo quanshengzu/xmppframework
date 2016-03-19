@@ -17,15 +17,18 @@ typedef enum {
 }XMPPResultType;
 
 // 登录结果的回调
-typedef void(^XMPPResultBlock)(XMPPResultType type);
+typedef void(^XMPPResultBlock)(XMPPResultType type);// 登录结果block
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-// 登录结果回调给调用者
+// 登录,并结果回调给调用者
 - (void)xmppUserLogin:(XMPPResultBlock) xmppResultBlock;
+
+// 注销
+- (void)xmppUserLogout;
 
 
 @end

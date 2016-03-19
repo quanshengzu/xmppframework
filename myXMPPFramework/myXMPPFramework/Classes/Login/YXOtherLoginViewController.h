@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YXBaseLoginViewController.h"
 
-@interface YXOtherLoginViewController : UIViewController
+@interface YXOtherLoginViewController : YXBaseLoginViewController
 
 @end

@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "MBProgressHUD+BWMExtension.h"
 #import "SVProgressHUD.h"
+#import "YXUserInfo.h"
 
 
 @interface YXOtherLoginViewController ()
@@ -35,6 +36,8 @@
     // 设置背景图片
     self.username.background = [UIImage stretchedImageWithName:@"operationbox_text"];
     self.password.background = [UIImage stretchedImageWithName:@"operationbox_text"];
+    // 添加文本输入框左边的图片
+    [self.password addLeftViewWithImage:@"Card_Lock"];
     
     [self.loginBtn setResizeN_BG:@"fts_green_btn" H_BG:@"fts_green_btn_HL"];
     
@@ -46,78 +49,20 @@
     NSString *username = self.username.text;
     NSString *password = self.password.text;
     
-    // 将帐号和密码保存到沙盒
-    // 获得偏好设置
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:username forKey:@"username"];
-    [userDefault setObject:password forKey:@"password"];
+    // 将用户名和密码保存到单例
+    [YXUserInfo sharedYXUserInfo].username = username;
+    [YXUserInfo sharedYXUserInfo].password = password;
     
-    // 同步
-    [userDefault synchronize];
-    
-    // 登陆前提示
-    [MBProgressHUD bwm_showHUDAddedTo:self.view title:@"正在登陆中..."];
-    
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    
-//    __typeof(self) __weak weakSelf = self;
-    
-    [app xmppUserLogin:^(XMPPResultType type) {
-        
-        [self handleResultType:type];
-        
-    }];
+    [super login];
     
 }
 
-// 处理回调的结果
-- (void)handleResultType:(XMPPResultType)type
+// 取消
+- (IBAction)cancel:(id)sender
 {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        
-        [MBProgressHUD hideHUDForView:self.view animated:NO];
-        
-        switch (type)
-        {
-            case XMPPResultTypeSuccess:
-                NSLog(@"登陆成功");
-                // 跳转到主界面
-                [self enterMainView];
-                
-                break;
-            case XMPPResultTypeFailure:
-                NSLog(@"登陆失败");
-                [SVProgressHUD showErrorWithStatus:@"用户名或密码错误" maskType:SVProgressHUDMaskTypeBlack];
-                break;
-            case XMPPResultTypeNetError:
-                NSLog(@"网络错误");
-                [SVProgressHUD showErrorWithStatus:@"网络不给力"];
-                break;
-                
-            default:
-                break;
-        }
-        
-    });
-    
-    
-}
-
-// 登陆成功后跳转到主界面
-- (void)enterMainView
-{
-    // 隐藏模态窗口
     [self dismissViewControllerAnimated:YES completion:nil];
-    
-    // 1.从storyboard中加载主界面
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.view.window.rootViewController = storyboard.instantiateInitialViewController;
 }
 
-- (void)dealloc
-{
-    NSLog(@"%s",__func__);
-}
 
 
 @end

@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "XMPPFramework.h"
+#import "YXNavigationController.h"
+#import "YXUserInfo.h"
 
 /*
  用户登录的过程:
@@ -16,6 +18,17 @@
  3.连接服务器成功后，向服务器发送password进行授权认证
  4.授权成功后，向服务器发送"在线"消息
  5.登录完成后跳转到主界面
+ 
+ 
+ 登录细节：
+ 1.如果用户登录成功后，点击注销回到登录界面，显示上次登录的用户名
+   把用户数据保存到沙盒
+   当用户登录成功后，将用户数据保存到沙盒
+   启动程序的时候，再从沙盒中获取
+ 
+ 2.用户成功登录后，如果关闭APP，重新启动程序，如果没有注销，直接来到主界面
+   记录登录状态
+   如果用户登录过，程序重新启动的时候，自动登录到服务器
  
  */
 
@@ -48,6 +61,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [YXNavigationController setupNavigationBar];
+    
+    // 从沙盒中读取用户信息
+    [[YXUserInfo sharedYXUserInfo] loadUserInfoToSandbox];
+    
+    // 判断用户的登录状态，如果登录过，直接跳转到主界面并连接到服务器
+    if ([YXUserInfo sharedYXUserInfo].loginStatus)
+    {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = storyboard.instantiateInitialViewController;
+        
+        // 连接到服务器
+        [self xmppUserLogin:nil];
+    }
     
     
     return YES;
@@ -82,8 +110,10 @@
      
      */
     
-    // 从沙盒中获得账户名
-    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+//    // 从沙盒中获得账户名
+//    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
+    // 从单例中获得用户名
+    NSString *username = [YXUserInfo sharedYXUserInfo].username;
     
     // 获得当前客户端
     NSString *model = [UIDevice currentDevice].localizedModel;
@@ -110,8 +140,10 @@
 - (void)sendPwdToHost
 {
     YXLog(@"向服务器发送password进行授权认证...");
-    // 从沙盒中获得密码
-    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+//    // 从沙盒中获得密码
+//    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
+    // 从单例中获得密码
+    NSString *password = [YXUserInfo sharedYXUserInfo].password;
     
 //    NSString *password = @"123456";
     NSError *error = nil;
@@ -191,6 +223,10 @@
     
     // 2.断开连接
     [_xmppStream disconnect];
+    
+    // 3.回到登录界面
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    self.window.rootViewController = storyboard.instantiateInitialViewController;
 }
 
 
