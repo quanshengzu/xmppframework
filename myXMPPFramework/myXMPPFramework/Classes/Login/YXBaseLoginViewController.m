@@ -31,11 +31,11 @@
     AppDelegate *app = [UIApplication sharedApplication].delegate;
     
      // 已经注册过
-    app.registerOperation = NO;
+    [YXXMPPTool sharedYXXMPPTool].registerOperation = NO;
     
        __typeof(self) __weak weakSelf = self;
     
-    [app xmppUserLogin:^(XMPPResultType type) {
+    [[YXXMPPTool sharedYXXMPPTool] xmppUserLogin:^(XMPPResultType type) {
         
         [weakSelf handleResultType:type];
         

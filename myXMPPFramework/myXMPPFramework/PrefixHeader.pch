@@ -16,6 +16,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CategoryWF.h"
+#import "YXUserInfo.h"
+#import "YXXMPPTool.h"
 
 // 自定义Log
 #ifdef DEBUG

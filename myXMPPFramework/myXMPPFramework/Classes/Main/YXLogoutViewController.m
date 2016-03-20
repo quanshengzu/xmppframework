@@ -35,8 +35,7 @@
     [[YXUserInfo sharedYXUserInfo] saveUserInfoToSandbox];
     
     
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    [app xmppUserLogout];
+    [[YXXMPPTool sharedYXXMPPTool] xmppUserLogout];
     
 }
 

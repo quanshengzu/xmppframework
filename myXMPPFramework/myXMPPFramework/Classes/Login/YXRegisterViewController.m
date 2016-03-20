@@ -62,11 +62,11 @@
     // 提示正在注册
     [MBProgressHUD bwm_showHUDAddedTo:self.view title:@"正在注册中..."];
     
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    app.registerOperation = YES;
+    
+    [YXXMPPTool sharedYXXMPPTool].registerOperation = YES;
     
      __typeof(self) __weak weakSelf = self;
-    [app xmppUserRegister:^(XMPPResultType type) {
+    [[YXXMPPTool sharedYXXMPPTool] xmppUserRegister:^(XMPPResultType type) {
         
         [weakSelf handleRegisterResult:type];
     }];
