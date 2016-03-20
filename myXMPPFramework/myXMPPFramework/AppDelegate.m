@@ -113,7 +113,17 @@
 //    // 从沙盒中获得账户名
 //    NSString *username = [[NSUserDefaults standardUserDefaults] objectForKey:@"username"];
     // 从单例中获得用户名
-    NSString *username = [YXUserInfo sharedYXUserInfo].username;
+    NSString *username = nil;
+    
+    // 根据是否在进行注册操作来确定用户名
+    if (self.registerOperation)
+    {
+        username = [YXUserInfo sharedYXUserInfo].registerUsername;
+        
+    } else
+    {
+        username = [YXUserInfo sharedYXUserInfo].username;
+    }
     
     // 获得当前客户端
     NSString *model = [UIDevice currentDevice].localizedModel;
@@ -143,14 +153,26 @@
 //    // 从沙盒中获得密码
 //    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:@"password"];
     // 从单例中获得密码
-    NSString *password = [YXUserInfo sharedYXUserInfo].password;
-    
-//    NSString *password = @"123456";
     NSError *error = nil;
-    if (![_xmppStream authenticateWithPassword:password error:&error])
+    NSString *password = nil;
+    if (self.registerOperation)
     {
-        YXLog(@"密码认证失败:%@",error);
+        password = [YXUserInfo sharedYXUserInfo].registerPassword;
+        if (![_xmppStream registerWithPassword:password error:&error])
+        {
+            YXLog(@"注册失败:%@",error);
+        }
+    } else
+    {
+        password = [YXUserInfo sharedYXUserInfo].password;
+        if (![_xmppStream authenticateWithPassword:password error:&error])
+        {
+            YXLog(@"密码认证失败:%@",error);
+        }
     }
+    
+  
+    
 }
 
 #pragma mark - 授权成功后，向服务器发送"在线"消息
@@ -214,6 +236,26 @@
     
 }
 
+#pragma mark - 注册成功
+- (void)xmppStreamDidRegister:(XMPPStream *)sender
+{
+    if (_xmppResultBlock)
+    {
+        _xmppResultBlock(XMPPResultTypeRegisterSuccess);
+    }
+}
+
+#pragma mark - 注册失败
+- (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error
+{
+    YXLog(@"error:%@",error);
+    if (_xmppResultBlock)
+    {
+        _xmppResultBlock(XMPPResultTypeRegisterFailure);
+    }
+}
+
+
 #pragma mark - 注销连接
 - (void)xmppUserLogout
 {
@@ -238,6 +280,19 @@
     
     // 2.断开之前的连接
    [_xmppStream disconnect];
+    
+    // 3.连接到服务器
+    [self connectToHost];
+}
+
+#pragma mark - 注册
+- (void)xmppUserRegister:(XMPPResultBlock)xmppResultBlock
+{
+    // 1.将block保存起来
+    _xmppResultBlock = xmppResultBlock;
+    
+    // 2.断开之前的连接
+    [_xmppStream disconnect];
     
     // 3.连接到服务器
     [self connectToHost];

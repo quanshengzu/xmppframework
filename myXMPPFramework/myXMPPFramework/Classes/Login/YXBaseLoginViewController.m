@@ -22,7 +22,6 @@
 // 登录
 - (void)login
 {
-    
     // 退出键盘
     [self.view endEditing:YES];
     
@@ -30,6 +29,9 @@
     [MBProgressHUD bwm_showHUDAddedTo:self.view title:@"正在登陆中..."];
     
     AppDelegate *app = [UIApplication sharedApplication].delegate;
+    
+     // 已经注册过
+    app.registerOperation = NO;
     
        __typeof(self) __weak weakSelf = self;
     

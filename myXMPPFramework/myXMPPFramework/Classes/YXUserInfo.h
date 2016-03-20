@@ -22,6 +22,14 @@ singleton_interface(YXUserInfo)
 // 登录状态
 @property (nonatomic, assign)BOOL loginStatus;
 
+// 注册用户名
+@property (nonatomic, copy)NSString *registerUsername;
+
+// 注册密码
+@property (nonatomic, copy)NSString *registerPassword;
+
+
+
 // 保存用户信息到沙盒
 - (void)saveUserInfoToSandbox;
 

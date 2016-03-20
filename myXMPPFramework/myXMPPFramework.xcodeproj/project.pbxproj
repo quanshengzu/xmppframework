@@ -12,6 +12,7 @@
 		54229D471C9D9306009B471B /* YXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D461C9D9306009B471B /* YXUserInfo.m */; };
 		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
 		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
+		54A042791C9E414000163EA9 /* YXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A042781C9E414000163EA9 /* YXRegisterViewController.m */; };
 		54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D131C9A7A6700653A6B /* Login.storyboard */; };
 		54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D16D151C9A7A6700653A6B /* YXLoginViewController.m */; };
 		54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D181C9A7CA500653A6B /* Main.storyboard */; };
@@ -172,6 +173,8 @@
 		54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBaseLoginViewController.m; sourceTree = "<group>"; };
 		5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXOtherLoginViewController.h; sourceTree = "<group>"; };
 		5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXOtherLoginViewController.m; sourceTree = "<group>"; };
+		54A042771C9E414000163EA9 /* YXRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRegisterViewController.h; sourceTree = "<group>"; };
+		54A042781C9E414000163EA9 /* YXRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRegisterViewController.m; sourceTree = "<group>"; };
 		54D16D131C9A7A6700653A6B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		54D16D141C9A7A6700653A6B /* YXLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLoginViewController.h; sourceTree = "<group>"; };
 		54D16D151C9A7A6700653A6B /* YXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLoginViewController.m; sourceTree = "<group>"; };
@@ -533,6 +536,8 @@
 				5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */,
 				54229D4A1C9DA147009B471B /* YXBaseLoginViewController.h */,
 				54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */,
+				54A042771C9E414000163EA9 /* YXRegisterViewController.h */,
+				54A042781C9E414000163EA9 /* YXRegisterViewController.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1643,6 +1648,7 @@
 				54D7B42D1C980345000AC3C5 /* XMPPMUC.m in Sources */,
 				54D7B4171C980345000AC3C5 /* XMPPRosterMemoryStorage.m in Sources */,
 				54D7B4581C980345000AC3C5 /* XMPPBlocking.m in Sources */,
+				54A042791C9E414000163EA9 /* YXRegisterViewController.m in Sources */,
 				54D7B4421C980345000AC3C5 /* XMPPMessage+XEP_0066.m in Sources */,
 				54D7B4131C980345000AC3C5 /* XMPPRoster.xcdatamodel in Sources */,
 				54D7B41F1C980345000AC3C5 /* XMPPLastActivity.m in Sources */,
