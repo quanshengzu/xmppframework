@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YXLogoutViewController : UITableViewController
+@interface YXMeTableViewController : UITableViewController
 
 @end

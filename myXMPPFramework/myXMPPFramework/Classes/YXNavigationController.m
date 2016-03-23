@@ -20,6 +20,10 @@
     // 1.获得全局的navigationBar
     UINavigationBar *navBar = [UINavigationBar appearance];
     
+    UITabBar *tabBar = [UITabBar appearance];
+    
+    [tabBar setTintColor:[UIColor greenColor]];
+    
     // 2.设置背景图片
     [navBar setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios8"] forBarMetrics:UIBarMetricsDefault];
     

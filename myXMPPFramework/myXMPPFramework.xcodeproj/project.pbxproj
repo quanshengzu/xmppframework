@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		54229D411C9D7ED6009B471B /* YXNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D401C9D7ED6009B471B /* YXNavigationController.m */; };
-		54229D441C9D8308009B471B /* YXLogoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D431C9D8308009B471B /* YXLogoutViewController.m */; };
+		54229D441C9D8308009B471B /* YXMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D431C9D8308009B471B /* YXMeTableViewController.m */; };
 		54229D471C9D9306009B471B /* YXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D461C9D9306009B471B /* YXUserInfo.m */; };
 		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
 		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
@@ -17,6 +17,7 @@
 		54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D131C9A7A6700653A6B /* Login.storyboard */; };
 		54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D16D151C9A7A6700653A6B /* YXLoginViewController.m */; };
 		54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D181C9A7CA500653A6B /* Main.storyboard */; };
+		54D2D5BF1CA2F9570096488A /* YXProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D2D5BE1CA2F9570096488A /* YXProfileTableViewController.m */; };
 		54D7B2821C980027000AC3C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2811C980027000AC3C5 /* main.m */; };
 		54D7B2851C980027000AC3C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2841C980027000AC3C5 /* AppDelegate.m */; };
 		54D7B2881C980027000AC3C5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B2871C980027000AC3C5 /* ViewController.m */; };
@@ -165,8 +166,8 @@
 		01A37AC4E6760936E87F5E35 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		54229D3F1C9D7ED6009B471B /* YXNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXNavigationController.h; sourceTree = "<group>"; };
 		54229D401C9D7ED6009B471B /* YXNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXNavigationController.m; sourceTree = "<group>"; };
-		54229D421C9D8308009B471B /* YXLogoutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLogoutViewController.h; sourceTree = "<group>"; };
-		54229D431C9D8308009B471B /* YXLogoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLogoutViewController.m; sourceTree = "<group>"; };
+		54229D421C9D8308009B471B /* YXMeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMeTableViewController.h; sourceTree = "<group>"; };
+		54229D431C9D8308009B471B /* YXMeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMeTableViewController.m; sourceTree = "<group>"; };
 		54229D451C9D9306009B471B /* YXUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXUserInfo.h; sourceTree = "<group>"; };
 		54229D461C9D9306009B471B /* YXUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXUserInfo.m; sourceTree = "<group>"; };
 		54229D491C9D933C009B471B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -183,6 +184,8 @@
 		54D16D151C9A7A6700653A6B /* YXLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLoginViewController.m; sourceTree = "<group>"; };
 		54D16D181C9A7CA500653A6B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		54D16D1A1C9AF7FB00653A6B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		54D2D5BD1CA2F9570096488A /* YXProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXProfileTableViewController.h; sourceTree = "<group>"; };
+		54D2D5BE1CA2F9570096488A /* YXProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXProfileTableViewController.m; sourceTree = "<group>"; };
 		54D7B27D1C980027000AC3C5 /* myXMPPFramework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myXMPPFramework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		54D7B2811C980027000AC3C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		54D7B2831C980027000AC3C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -547,6 +550,17 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		54D2D5B91CA2E8EA0096488A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				54229D421C9D8308009B471B /* YXMeTableViewController.h */,
+				54229D431C9D8308009B471B /* YXMeTableViewController.m */,
+				54D2D5BD1CA2F9570096488A /* YXProfileTableViewController.h */,
+				54D2D5BE1CA2F9570096488A /* YXProfileTableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		54D7B2741C980027000AC3C5 = {
 			isa = PBXGroup;
 			children = (
@@ -639,9 +653,8 @@
 		54D7B29C1C98018B000AC3C5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				54D2D5B91CA2E8EA0096488A /* Controllers */,
 				54D16D181C9A7CA500653A6B /* Main.storyboard */,
-				54229D421C9D8308009B471B /* YXLogoutViewController.h */,
-				54229D431C9D8308009B471B /* YXLogoutViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1614,7 +1627,7 @@
 				54D7B4481C980345000AC3C5 /* NSString+XEP_0106.m in Sources */,
 				54D7B4601C980345000AC3C5 /* XMPPMessage+XEP_0224.m in Sources */,
 				54229D471C9D9306009B471B /* YXUserInfo.m in Sources */,
-				54229D441C9D8308009B471B /* YXLogoutViewController.m in Sources */,
+				54229D441C9D8308009B471B /* YXMeTableViewController.m in Sources */,
 				54D7B4391C980345000AC3C5 /* XMPPvCardTempLabel.m in Sources */,
 				54D7B3FF1C980345000AC3C5 /* XMPPXFacebookPlatformAuthentication.m in Sources */,
 				54D7B2B81C98022E000AC3C5 /* ContextFilterLogFormatter.m in Sources */,
@@ -1647,6 +1660,7 @@
 				54D7B4251C980345000AC3C5 /* XMPPRoomHybrid.xcdatamodeld in Sources */,
 				54D7B4861C982FE6000AC3C5 /* UIScreen+WF.m in Sources */,
 				54D7B4511C980345000AC3C5 /* XMPPMessageArchivingCoreDataStorage.m in Sources */,
+				54D2D5BF1CA2F9570096488A /* YXProfileTableViewController.m in Sources */,
 				54D7B4021C980345000AC3C5 /* NSNumber+XMPP.m in Sources */,
 				54D7B4451C980345000AC3C5 /* XMPPMessage+XEP_0085.m in Sources */,
 				54D7B4891C982FE6000AC3C5 /* UIView+WF.m in Sources */,
@@ -1814,10 +1828,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = myXMPPFramework/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = myXMPPFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1839,10 +1854,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				ENABLE_BITCODE = NO;
 				GCC_PREFIX_HEADER = myXMPPFramework/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = myXMPPFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

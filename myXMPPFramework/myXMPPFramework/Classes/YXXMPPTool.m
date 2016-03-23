@@ -7,7 +7,7 @@
 //
 
 #import "YXXMPPTool.h"
-#import "XMPPFramework.h"
+
 #import "AppDelegate.h"
 
 
@@ -41,6 +41,15 @@
 // 保存登录结果block
 @property (nonatomic, copy)XMPPResultBlock xmppResultBlock;
 
+
+
+// 电子名片存储
+@property (nonatomic, strong)XMPPvCardCoreDataStorage *vCardStorge;
+
+// 电子名片头像模块
+@property (nonatomic, strong)XMPPvCardAvatarModule *avatar;
+
+
 // 1.初始化xmppStream
 - (void)setupxmppStream;
 
@@ -66,6 +75,20 @@ singleton_implementation(YXXMPPTool)
 {
     // 创建xmppStream
     _xmppStream = [[XMPPStream alloc] init];
+    
+    /*************添加模块*************/
+#warning 添加模块后一定要激活
+    // 1.添加电子名片模块
+    _vCardStorge = [[XMPPvCardCoreDataStorage alloc] init];
+    _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorge];
+    // 激活
+    [_vCard activate:_xmppStream];
+    
+    // 2.添加电子名片头像模块
+    _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
+    // 激活
+    [_avatar activate:_xmppStream];
+    
     
     // 指定代理
     // 队列采用全局队列，由系统去分配

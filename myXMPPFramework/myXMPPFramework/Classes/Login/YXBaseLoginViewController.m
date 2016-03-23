@@ -28,8 +28,6 @@
     // 登陆前提示
     [MBProgressHUD bwm_showHUDAddedTo:self.view title:@"正在登陆中..."];
     
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    
      // 已经注册过
     [YXXMPPTool sharedYXXMPPTool].registerOperation = NO;
     
@@ -90,7 +88,8 @@
     
     // 1.从storyboard中加载主界面
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    self.view.window.rootViewController = storyboard.instantiateInitialViewController;
+    UIApplication *app = [UIApplication sharedApplication];
+    app.keyWindow.rootViewController = storyboard.instantiateInitialViewController;
 }
 
 

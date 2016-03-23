@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
+#import "XMPPFramework.h"
 
 @interface YXXMPPTool : NSObject
 
@@ -29,6 +30,9 @@ typedef void(^XMPPResultBlock)(XMPPResultType type);// 登录结果block
 // 用来标记是否注册
 @property (assign, nonatomic,getter=isRegister) BOOL registerOperation;
 
+// 电子名片模块
+@property (nonatomic, strong,readonly)XMPPvCardTempModule *vCard;
+
 
 // 登录,并将结果回调给调用者
 - (void)xmppUserLogin:(XMPPResultBlock) xmppResultBlock;
@@ -38,6 +42,8 @@ typedef void(^XMPPResultBlock)(XMPPResultType type);// 登录结果block
 
 // 注销
 - (void)xmppUserLogout;
+
+
 
 
 

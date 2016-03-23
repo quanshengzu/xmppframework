@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "XMPPFramework.h"
 #import "YXNavigationController.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"// 打印日志
 
 
 
@@ -22,6 +24,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
     [YXNavigationController setupNavigationBar];
     
