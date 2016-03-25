@@ -12,6 +12,8 @@
 #define passwordKey @"passwordKey"
 #define loginStatusKey @"loginStatusKey"
 
+static NSString *domain = @"127.0.0.1";
+
 @implementation YXUserInfo
 
 singleton_implementation(YXUserInfo)
@@ -38,6 +40,11 @@ singleton_implementation(YXUserInfo)
     self.username = [defaults objectForKey:usernameKey];
     self.password = [defaults objectForKey:passwordKey];
     self.loginStatus = [defaults boolForKey:loginStatusKey];
+}
+
+- (NSString *)jidStr
+{
+    return [NSString stringWithFormat:@"%@@%@",self.username,domain];
 }
 
 

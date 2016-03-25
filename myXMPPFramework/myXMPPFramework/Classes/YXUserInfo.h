@@ -28,6 +28,8 @@ singleton_interface(YXUserInfo)
 // 注册密码
 @property (nonatomic, copy)NSString *registerPassword;
 
+// 当前登录用户的jid
+@property (nonatomic, copy)NSString *jidStr;
 
 
 // 保存用户信息到沙盒

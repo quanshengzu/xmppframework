@@ -24,6 +24,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // 获取沙盒目录
+    NSString *sandbox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
+    NSLog(@"%@",sandbox);
+    
     [DDLog addLogger:[DDTTYLogger sharedInstance]];
     
     [YXNavigationController setupNavigationBar];

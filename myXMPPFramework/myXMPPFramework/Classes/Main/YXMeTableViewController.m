@@ -30,6 +30,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+   
+   
+}
+
+// 注销
+- (IBAction)logout:(id)sender
+{
+    // 记录用户的登录状态为  注销
+    [YXUserInfo sharedYXUserInfo].loginStatus = NO;
+    
+    // 保存用户信息
+    [[YXUserInfo sharedYXUserInfo] saveUserInfoToSandbox];
+    
+    
+    [[YXXMPPTool sharedYXXMPPTool] xmppUserLogout];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+     [super viewWillAppear:animated];
     
     XMPPvCardTemp *myvCardTemp = [YXXMPPTool sharedYXXMPPTool].vCard.myvCardTemp;
     
@@ -48,21 +70,7 @@
     NSString *username = [YXUserInfo sharedYXUserInfo].username;
     self.weixinNumLabel.text = [NSString stringWithFormat:@"微信号:%@",username];
     
-    
    
-}
-
-// 注销
-- (IBAction)logout:(id)sender
-{
-    // 记录用户的登录状态为  注销
-    [YXUserInfo sharedYXUserInfo].loginStatus = NO;
-    
-    // 保存用户信息
-    [[YXUserInfo sharedYXUserInfo] saveUserInfoToSandbox];
-    
-    
-    [[YXXMPPTool sharedYXXMPPTool] xmppUserLogout];
     
 }
 

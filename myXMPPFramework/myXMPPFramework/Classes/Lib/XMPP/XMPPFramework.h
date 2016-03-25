@@ -29,6 +29,11 @@
 
 #import "XMPPvCardAvatarModule.h" // 电子名片头像模块
 
+#import "XMPPRoster.h" // 花名册
+#import "XMPPRosterCoreDataStorage.h" // 花名册存储
+
+#import "XMPPReconnect.h" // 自动连接模块
+
 // List the modules you're using here:
 // (the following may not be a complete list)
 

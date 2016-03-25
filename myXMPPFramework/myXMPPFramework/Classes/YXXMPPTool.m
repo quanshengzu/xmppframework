@@ -42,12 +42,19 @@
 @property (nonatomic, copy)XMPPResultBlock xmppResultBlock;
 
 
-
 // 电子名片存储
 @property (nonatomic, strong)XMPPvCardCoreDataStorage *vCardStorge;
 
 // 电子名片头像模块
 @property (nonatomic, strong)XMPPvCardAvatarModule *avatar;
+
+// 花名册模块
+@property (nonatomic, strong)XMPPRoster *roster;
+
+
+
+// 自动连接模块
+@property (nonatomic, strong)XMPPReconnect *reconnect;
 
 
 // 1.初始化xmppStream
@@ -78,6 +85,10 @@ singleton_implementation(YXXMPPTool)
     
     /*************添加模块*************/
 #warning 添加模块后一定要激活
+    // 0.添加自动连接模块
+    _reconnect = [[XMPPReconnect alloc] init];
+    [_reconnect activate:_xmppStream];
+    
     // 1.添加电子名片模块
     _vCardStorge = [[XMPPvCardCoreDataStorage alloc] init];
     _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorge];
@@ -88,6 +99,13 @@ singleton_implementation(YXXMPPTool)
     _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
     // 激活
     [_avatar activate:_xmppStream];
+    
+    // 3.添加花名册模块
+    _rosterStorge = [[XMPPRosterCoreDataStorage alloc] init];
+    _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterStorge];
+    // 激活
+    [_roster activate:_xmppStream];
+    
     
     
     // 指定代理

@@ -13,6 +13,7 @@
 		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
 		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
 		54A042791C9E414000163EA9 /* YXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A042781C9E414000163EA9 /* YXRegisterViewController.m */; };
+		54A794A81CA4E22500E1E164 /* YXRosterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */; };
 		54CB90151C9E88A200B40E8B /* YXXMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 54CB90141C9E88A200B40E8B /* YXXMPPTool.m */; };
 		54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54D16D131C9A7A6700653A6B /* Login.storyboard */; };
 		54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D16D151C9A7A6700653A6B /* YXLoginViewController.m */; };
@@ -159,6 +160,7 @@
 		54D7B4871C982FE6000AC3C5 /* UIStoryboard+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B47F1C982FE6000AC3C5 /* UIStoryboard+WF.m */; };
 		54D7B4881C982FE6000AC3C5 /* UITextField+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */; };
 		54D7B4891C982FE6000AC3C5 /* UIView+WF.m in Sources */ = {isa = PBXBuildFile; fileRef = 54D7B4831C982FE6000AC3C5 /* UIView+WF.m */; };
+		54E1084E1CA44A9F00B85040 /* YXEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E1084D1CA44A9F00B85040 /* YXEditorTableViewController.m */; };
 		7AC12966F0352DF2EBA15FBA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B694514723F297E4B5D3F70A /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +179,8 @@
 		5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXOtherLoginViewController.m; sourceTree = "<group>"; };
 		54A042771C9E414000163EA9 /* YXRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRegisterViewController.h; sourceTree = "<group>"; };
 		54A042781C9E414000163EA9 /* YXRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRegisterViewController.m; sourceTree = "<group>"; };
+		54A794A61CA4E22500E1E164 /* YXRosterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRosterTableViewController.h; sourceTree = "<group>"; };
+		54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXRosterTableViewController.m; sourceTree = "<group>"; };
 		54CB90131C9E88A200B40E8B /* YXXMPPTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXXMPPTool.h; sourceTree = "<group>"; };
 		54CB90141C9E88A200B40E8B /* YXXMPPTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXXMPPTool.m; sourceTree = "<group>"; };
 		54D16D131C9A7A6700653A6B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -476,6 +480,8 @@
 		54D7B4811C982FE6000AC3C5 /* UITextField+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+WF.m"; sourceTree = "<group>"; };
 		54D7B4821C982FE6000AC3C5 /* UIView+WF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WF.h"; sourceTree = "<group>"; };
 		54D7B4831C982FE6000AC3C5 /* UIView+WF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WF.m"; sourceTree = "<group>"; };
+		54E1084C1CA44A9F00B85040 /* YXEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXEditorTableViewController.h; sourceTree = "<group>"; };
+		54E1084D1CA44A9F00B85040 /* YXEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXEditorTableViewController.m; sourceTree = "<group>"; };
 		B694514723F297E4B5D3F70A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA3E2D54CF70B42D496B0244 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -557,6 +563,10 @@
 				54229D431C9D8308009B471B /* YXMeTableViewController.m */,
 				54D2D5BD1CA2F9570096488A /* YXProfileTableViewController.h */,
 				54D2D5BE1CA2F9570096488A /* YXProfileTableViewController.m */,
+				54E1084C1CA44A9F00B85040 /* YXEditorTableViewController.h */,
+				54E1084D1CA44A9F00B85040 /* YXEditorTableViewController.m */,
+				54A794A61CA4E22500E1E164 /* YXRosterTableViewController.h */,
+				54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -882,7 +892,7 @@
 				54D7B33A1C980345000AC3C5 /* XEP-0012 */,
 				54D7B33F1C980345000AC3C5 /* XEP-0016 */,
 				54D7B3421C980345000AC3C5 /* XEP-0045 */,
-				54D7B3661C980345000AC3C5 /* XEP-0054 */,
+				54D7B3661C980345000AC3C5 /* XEP-0054[电子名片] */,
 				54D7B3821C980345000AC3C5 /* XEP-0059 */,
 				54D7B3871C980345000AC3C5 /* XEP-0060 */,
 				54D7B38C1C980345000AC3C5 /* XEP-0065 */,
@@ -1104,7 +1114,7 @@
 			path = MemoryStorage;
 			sourceTree = "<group>";
 		};
-		54D7B3661C980345000AC3C5 /* XEP-0054 */ = {
+		54D7B3661C980345000AC3C5 /* XEP-0054[电子名片] */ = {
 			isa = PBXGroup;
 			children = (
 				54D7B3671C980345000AC3C5 /* CoreDataStorage */,
@@ -1125,6 +1135,7 @@
 				54D7B3801C980345000AC3C5 /* XMPPvCardTempTel.h */,
 				54D7B3811C980345000AC3C5 /* XMPPvCardTempTel.m */,
 			);
+			name = "XEP-0054[电子名片]";
 			path = "XEP-0054";
 			sourceTree = "<group>";
 		};
@@ -1591,6 +1602,7 @@
 				54D7B4461C980345000AC3C5 /* XMPPSoftwareVersion.m in Sources */,
 				54D7B41C1C980345000AC3C5 /* XMPPIQ+JabberRPCResonse.m in Sources */,
 				54D7B45A1C980345000AC3C5 /* XMPPPing.m in Sources */,
+				54A794A81CA4E22500E1E164 /* YXRosterTableViewController.m in Sources */,
 				54D7B40A1C980345000AC3C5 /* XMPPPresence.m in Sources */,
 				54D7B2D01C98024C000AC3C5 /* DDXMLDocument.m in Sources */,
 				54D7B43B1C980345000AC3C5 /* XMPPvCardTempTel.m in Sources */,
@@ -1637,6 +1649,7 @@
 				54D7B3FA1C980345000AC3C5 /* XMPPAnonymousAuthentication.m in Sources */,
 				54D7B2D21C98024C000AC3C5 /* DDXMLNode.m in Sources */,
 				54D16D171C9A7A6700653A6B /* YXLoginViewController.m in Sources */,
+				54E1084E1CA44A9F00B85040 /* YXEditorTableViewController.m in Sources */,
 				54D7B4691C980345000AC3C5 /* XMPPSRVResolver.m in Sources */,
 				54D7B4221C980345000AC3C5 /* XMPPRoomCoreDataStorage.m in Sources */,
 				54D7B40F1C980345000AC3C5 /* XMPPProcessOne.m in Sources */,
