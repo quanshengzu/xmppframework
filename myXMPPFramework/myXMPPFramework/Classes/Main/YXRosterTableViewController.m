@@ -8,10 +8,13 @@
 
 #import "YXRosterTableViewController.h"
 
-@interface YXRosterTableViewController ()
+@interface YXRosterTableViewController ()<NSFetchedResultsControllerDelegate>
 
 // 保存查询到的数据
 @property (nonatomic, strong)NSArray *friends;
+
+// 查询结果控制器
+@property (nonatomic, strong)NSFetchedResultsController *resultController;
 
 @end
 
@@ -20,9 +23,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     // 从花名册数据库中读取数据
-    //[self loadRosterData];
+    [self loadRosterData];
     
 }
 
@@ -46,13 +49,22 @@
     fetchRequest.sortDescriptors = @[sort];
     
     // 4.执行
-    self.friends = [context executeFetchRequest:fetchRequest error:nil];
-    NSLog(@"%@",self.friends);
+    _resultController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:context sectionNameKeyPath:nil cacheName:nil];
+    // 指定代理
+    _resultController.delegate = self;
+    
+    NSError *error = nil;
+    [_resultController performFetch:&error];
+    if (error)
+    {
+        YXLog(@"%@",error);
+    }
 }
 
+#pragma mark - UITableViewDelegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.friends.count;
+    return _resultController.fetchedObjects.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -61,7 +73,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     // 取出模型
-    XMPPUserCoreDataStorageObject *friend = self.friends[indexPath.row];
+//    XMPPUserCoreDataStorageObject *friend = self.friends[indexPath.row];
+    XMPPUserCoreDataStorageObject *friend = _resultController.fetchedObjects[indexPath.row];
     NSString *jidstr = friend.jidStr;
     NSString *domain = @"127.0.0.1";
     NSInteger length = jidstr.length;
@@ -70,37 +83,86 @@
     
     cell.textLabel.text = name;
     
-    return cell;
+    // 设置用户的活跃状态
+    switch (friend.sectionNum.intValue)
+    {
+        case 0:
+            cell.detailTextLabel.text = @"在线";
+            break;
+        case 1:
+            cell.detailTextLabel.text = @"离开";
+            break;
+        case 2:
+            cell.detailTextLabel.text = @"离线";
+            break;
+            
+        default:
+            break;
+    }
     
+    return cell;
     
 }
 
-- (NSArray *)friends
+#pragma mark - 删除好友
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_friends == nil)
+    if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        // 使用CoreData获取数据
-        // 1.获得上下文（关联到数据库）
-        NSManagedObjectContext *context = [YXXMPPTool sharedYXXMPPTool].rosterStorge.mainThreadManagedObjectContext;
+        // 获得当前好友的Jid
+        XMPPUserCoreDataStorageObject *friend = _resultController.fetchedObjects[indexPath.row];
+        XMPPJID *friendJid = friend.jid;
         
-        // 2.FetchRequest(获取哪张表)
-        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"XMPPUserCoreDataStorageObject"];
-        
-        // 3.设置过滤和排序
-        // 过滤当前登录的好友
-        NSString *jidStr = [YXUserInfo sharedYXUserInfo].jidStr;
-        NSPredicate *pre = [NSPredicate predicateWithFormat:@"streamBareJidStr = %@",jidStr];
-        fetchRequest.predicate = pre;
-        
-        // 排序
-        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES];
-        fetchRequest.sortDescriptors = @[sort];
-        
-        // 4.执行
-       _friends = [context executeFetchRequest:fetchRequest error:nil];
+        // 删除
+        [[YXXMPPTool sharedYXXMPPTool].roster removeUser:friendJid];
     }
-    return _friends;
 }
+
+// 显示中文
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除好友";
+}
+
+
+
+
+#pragma mark - 当花名册数据库的数据发生改变就会调用这个方法
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    YXLog(@"数据发生了改变");
+    // 刷新表格
+    [self.tableView reloadData];
+    
+}
+
+
+//- (NSArray *)friends
+//{
+//    if (_friends == nil)
+//    {
+//        // 使用CoreData获取数据
+//        // 1.获得上下文（关联到数据库）
+//        NSManagedObjectContext *context = [YXXMPPTool sharedYXXMPPTool].rosterStorge.mainThreadManagedObjectContext;
+//        
+//        // 2.FetchRequest(获取哪张表)
+//        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"XMPPUserCoreDataStorageObject"];
+//        
+//        // 3.设置过滤和排序
+//        // 过滤当前登录的好友
+//        NSString *jidStr = [YXUserInfo sharedYXUserInfo].jidStr;
+//        NSPredicate *pre = [NSPredicate predicateWithFormat:@"streamBareJidStr = %@",jidStr];
+//        fetchRequest.predicate = pre;
+//        
+//        // 排序
+//        NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"displayName" ascending:YES];
+//        fetchRequest.sortDescriptors = @[sort];
+//        
+//        // 4.执行
+//       _friends = [context executeFetchRequest:fetchRequest error:nil];
+//    }
+//    return _friends;
+//}
 
 
 

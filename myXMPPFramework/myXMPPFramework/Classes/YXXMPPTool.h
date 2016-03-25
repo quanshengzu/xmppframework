@@ -27,6 +27,9 @@ typedef enum {
 // 登录结果的回调
 typedef void(^XMPPResultBlock)(XMPPResultType type);// 登录结果block
 
+// xmppStream是跟服务器交流的最主要的类
+@property (nonatomic, strong)XMPPStream *xmppStream;
+
 // 用来标记是否注册
 @property (assign, nonatomic,getter=isRegister) BOOL registerOperation;
 
@@ -35,6 +38,9 @@ typedef void(^XMPPResultBlock)(XMPPResultType type);// 登录结果block
 
 // 花名册存储
 @property (nonatomic, strong)XMPPRosterCoreDataStorage *rosterStorge;
+
+// 花名册模块
+@property (nonatomic, strong)XMPPRoster *roster;
 
 
 // 登录,并将结果回调给调用者

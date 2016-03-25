@@ -70,8 +70,6 @@
     NSString *username = [YXUserInfo sharedYXUserInfo].username;
     self.weixinNumLabel.text = [NSString stringWithFormat:@"微信号:%@",username];
     
-   
-    
 }
 
 

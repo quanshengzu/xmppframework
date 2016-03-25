@@ -11,6 +11,7 @@
 		54229D441C9D8308009B471B /* YXMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D431C9D8308009B471B /* YXMeTableViewController.m */; };
 		54229D471C9D9306009B471B /* YXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D461C9D9306009B471B /* YXUserInfo.m */; };
 		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
+		5442BFA61CA58B12008AAD81 /* YXAddContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */; };
 		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
 		54A042791C9E414000163EA9 /* YXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A042781C9E414000163EA9 /* YXRegisterViewController.m */; };
 		54A794A81CA4E22500E1E164 /* YXRosterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */; };
@@ -175,6 +176,8 @@
 		54229D491C9D933C009B471B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		54229D4A1C9DA147009B471B /* YXBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBaseLoginViewController.h; sourceTree = "<group>"; };
 		54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBaseLoginViewController.m; sourceTree = "<group>"; };
+		5442BFA41CA58B12008AAD81 /* YXAddContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAddContactTableViewController.h; sourceTree = "<group>"; };
+		5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAddContactTableViewController.m; sourceTree = "<group>"; };
 		5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXOtherLoginViewController.h; sourceTree = "<group>"; };
 		5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXOtherLoginViewController.m; sourceTree = "<group>"; };
 		54A042771C9E414000163EA9 /* YXRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRegisterViewController.h; sourceTree = "<group>"; };
@@ -567,6 +570,8 @@
 				54E1084D1CA44A9F00B85040 /* YXEditorTableViewController.m */,
 				54A794A61CA4E22500E1E164 /* YXRosterTableViewController.h */,
 				54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */,
+				5442BFA41CA58B12008AAD81 /* YXAddContactTableViewController.h */,
+				5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1710,6 +1715,7 @@
 				54D7B41B1C980345000AC3C5 /* XMPPIQ+JabberRPC.m in Sources */,
 				54D7B44B1C980345000AC3C5 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				54D7B4671C980345000AC3C5 /* RFImageToDataTransformer.m in Sources */,
+				5442BFA61CA58B12008AAD81 /* YXAddContactTableViewController.m in Sources */,
 				54D7B4181C980345000AC3C5 /* XMPPUserMemoryStorageObject.m in Sources */,
 				54D7B41A1C980345000AC3C5 /* XMPPSystemInputActivityMonitor.m in Sources */,
 				54D7B2B61C98022E000AC3C5 /* DDLog.m in Sources */,

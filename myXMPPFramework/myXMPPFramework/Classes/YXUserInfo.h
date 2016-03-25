@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "Singleton.h"
 
+static NSString *domain = @"127.0.0.1";
+
 @interface YXUserInfo : NSObject
 
 singleton_interface(YXUserInfo)

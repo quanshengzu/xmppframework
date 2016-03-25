@@ -28,9 +28,10 @@
     [navBar setBackgroundImage:[UIImage imageNamed:@"topbarbg_ios8"] forBarMetrics:UIBarMetricsDefault];
     
     // 3.设置字体大小和颜色
-    NSDictionary *dict = @{NSFontAttributeName: [UIFont systemFontOfSize:14.f],
+    NSDictionary *dict = @{NSFontAttributeName: [UIFont systemFontOfSize:17.f],
                            NSForegroundColorAttributeName: [UIColor whiteColor]};
     [navBar setTitleTextAttributes:dict];
+    [navBar setTintColor:[UIColor whiteColor]];
     
     // 4.设置状态栏的样式
     // 需要在plist文件中配置View controller-based status bar appearance = NO

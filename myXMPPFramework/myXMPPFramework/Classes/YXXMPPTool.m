@@ -35,8 +35,7 @@
 
 @interface YXXMPPTool ()<XMPPStreamDelegate>
 
-// xmppStream是跟服务器交流的最主要的类
-@property (nonatomic, strong)XMPPStream *xmppStream;
+
 
 // 保存登录结果block
 @property (nonatomic, copy)XMPPResultBlock xmppResultBlock;
@@ -48,8 +47,7 @@
 // 电子名片头像模块
 @property (nonatomic, strong)XMPPvCardAvatarModule *avatar;
 
-// 花名册模块
-@property (nonatomic, strong)XMPPRoster *roster;
+
 
 
 

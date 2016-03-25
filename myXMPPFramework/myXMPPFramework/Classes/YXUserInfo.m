@@ -12,7 +12,7 @@
 #define passwordKey @"passwordKey"
 #define loginStatusKey @"loginStatusKey"
 
-static NSString *domain = @"127.0.0.1";
+
 
 @implementation YXUserInfo
 
