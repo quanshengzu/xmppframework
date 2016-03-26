@@ -103,6 +103,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="962-u3-zOT" kind="show" identifier="Roster2Chat" id="gev-Z6-ccd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQh-zY-zmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -154,7 +157,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w60-gS-Rq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="10"/>
+            <point key="canvasLocation" x="1342" y="-347"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="mZ9-EM-3EO">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="962-u3-zOT" customClass="YXChatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N2s-ks-E1x"/>
+                        <viewControllerLayoutGuide type="bottom" id="IOz-m9-Zfx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pXa-52-NMe">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WA6-Kc-ya2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1359" y="340"/>
         </scene>
         <!--通讯录-->
         <scene sceneID="8Sk-d3-sBB">

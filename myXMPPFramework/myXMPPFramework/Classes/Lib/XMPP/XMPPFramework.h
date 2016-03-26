@@ -34,6 +34,9 @@
 
 #import "XMPPReconnect.h" // 自动连接模块
 
+#import "XMPPMessageArchiving.h" // 消息模块
+#import "XMPPMessageArchivingCoreDataStorage.h" // 消息模块数据存储
+
 // List the modules you're using here:
 // (the following may not be a complete list)
 

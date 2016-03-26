@@ -35,11 +35,8 @@
 
 @interface YXXMPPTool ()<XMPPStreamDelegate>
 
-
-
 // 保存登录结果block
 @property (nonatomic, copy)XMPPResultBlock xmppResultBlock;
-
 
 // 电子名片存储
 @property (nonatomic, strong)XMPPvCardCoreDataStorage *vCardStorge;
@@ -47,12 +44,12 @@
 // 电子名片头像模块
 @property (nonatomic, strong)XMPPvCardAvatarModule *avatar;
 
-
-
-
-
 // 自动连接模块
 @property (nonatomic, strong)XMPPReconnect *reconnect;
+
+// 消息模块
+@property (nonatomic, strong)XMPPMessageArchiving *message;
+
 
 
 // 1.初始化xmppStream
@@ -104,6 +101,11 @@ singleton_implementation(YXXMPPTool)
     // 激活
     [_roster activate:_xmppStream];
     
+    // 4.添加聊天数据模块
+    _messageStorage = [[XMPPMessageArchivingCoreDataStorage alloc] init];
+    _message = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_messageStorage];
+    // 激活
+    [_message activate:_xmppStream];
     
     
     // 指定代理
@@ -316,6 +318,33 @@ singleton_implementation(YXXMPPTool)
     
     // 3.连接到服务器
     [self connectToHost];
+}
+
+- (void)dealloc
+{
+    // 1.移除代理
+    [_xmppStream removeDelegate:self];
+    
+    // 2.停止模块
+    [_reconnect deactivate];
+    [_vCard deactivate];
+    [_avatar deactivate];
+    [_roster deactivate];
+    [_message deactivate];
+    
+    // 3.断开连接
+    [_xmppStream disconnect];
+    
+    // 4.清空资源
+    _reconnect = nil;
+    _vCard = nil;
+    _vCardStorge = nil;
+    _avatar = nil;
+    _rosterStorge = nil;
+    _roster = nil;
+    _messageStorage = nil;
+    _message = nil;
+    _xmppStream = nil;
 }
 
 

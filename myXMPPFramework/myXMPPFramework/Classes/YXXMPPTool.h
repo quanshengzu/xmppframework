@@ -42,6 +42,9 @@ typedef void(^XMPPResultBlock)(XMPPResultType type);// 登录结果block
 // 花名册模块
 @property (nonatomic, strong)XMPPRoster *roster;
 
+// 消息模块数据存储
+@property (nonatomic, strong)XMPPMessageArchivingCoreDataStorage *messageStorage;
+
 
 // 登录,并将结果回调给调用者
 - (void)xmppUserLogin:(XMPPResultBlock) xmppResultBlock;

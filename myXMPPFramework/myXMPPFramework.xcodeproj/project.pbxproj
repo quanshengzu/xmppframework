@@ -12,6 +12,10 @@
 		54229D471C9D9306009B471B /* YXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D461C9D9306009B471B /* YXUserInfo.m */; };
 		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
 		5442BFA61CA58B12008AAD81 /* YXAddContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */; };
+		5451ACB31CA651C00063965F /* YXChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5451ACB21CA651C00063965F /* YXChatViewController.m */; };
+		5451ACB71CA653420063965F /* YXInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5451ACB61CA653420063965F /* YXInputView.m */; };
+		5451ACB91CA6534F0063965F /* YXInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5451ACB81CA6534F0063965F /* YXInputView.xib */; };
+		5451ACBD1CA6E1150063965F /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5451ACBC1CA6E1150063965F /* HttpTool.m */; };
 		5467DAB11C9C4994009DC803 /* YXOtherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */; };
 		54A042791C9E414000163EA9 /* YXRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A042781C9E414000163EA9 /* YXRegisterViewController.m */; };
 		54A794A81CA4E22500E1E164 /* YXRosterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */; };
@@ -178,6 +182,13 @@
 		54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBaseLoginViewController.m; sourceTree = "<group>"; };
 		5442BFA41CA58B12008AAD81 /* YXAddContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAddContactTableViewController.h; sourceTree = "<group>"; };
 		5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAddContactTableViewController.m; sourceTree = "<group>"; };
+		5451ACB11CA651C00063965F /* YXChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXChatViewController.h; sourceTree = "<group>"; };
+		5451ACB21CA651C00063965F /* YXChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXChatViewController.m; sourceTree = "<group>"; };
+		5451ACB51CA653420063965F /* YXInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXInputView.h; sourceTree = "<group>"; };
+		5451ACB61CA653420063965F /* YXInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXInputView.m; sourceTree = "<group>"; };
+		5451ACB81CA6534F0063965F /* YXInputView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXInputView.xib; sourceTree = "<group>"; };
+		5451ACBB1CA6E1150063965F /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		5451ACBC1CA6E1150063965F /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		5467DAAF1C9C4994009DC803 /* YXOtherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXOtherLoginViewController.h; sourceTree = "<group>"; };
 		5467DAB01C9C4994009DC803 /* YXOtherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXOtherLoginViewController.m; sourceTree = "<group>"; };
 		54A042771C9E414000163EA9 /* YXRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXRegisterViewController.h; sourceTree = "<group>"; };
@@ -516,6 +527,7 @@
 		54229D3D1C9D7E8D009B471B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				5451ACBA1CA6E1040063965F /* Tool */,
 				54229D481C9D9318009B471B /* Singleton */,
 				54229D3E1C9D7EB0009B471B /* CommonControllers */,
 			);
@@ -541,6 +553,25 @@
 				54CB90141C9E88A200B40E8B /* YXXMPPTool.m */,
 			);
 			name = Singleton;
+			sourceTree = "<group>";
+		};
+		5451ACB41CA653240063965F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5451ACB51CA653420063965F /* YXInputView.h */,
+				5451ACB61CA653420063965F /* YXInputView.m */,
+				5451ACB81CA6534F0063965F /* YXInputView.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		5451ACBA1CA6E1040063965F /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				5451ACBB1CA6E1150063965F /* HttpTool.h */,
+				5451ACBC1CA6E1150063965F /* HttpTool.m */,
+			);
+			name = Tool;
 			sourceTree = "<group>";
 		};
 		54D16D121C9A7A6700653A6B /* Login */ = {
@@ -572,6 +603,8 @@
 				54A794A71CA4E22500E1E164 /* YXRosterTableViewController.m */,
 				5442BFA41CA58B12008AAD81 /* YXAddContactTableViewController.h */,
 				5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */,
+				5451ACB11CA651C00063965F /* YXChatViewController.h */,
+				5451ACB21CA651C00063965F /* YXChatViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -668,6 +701,7 @@
 		54D7B29C1C98018B000AC3C5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				5451ACB41CA653240063965F /* View */,
 				54D2D5B91CA2E8EA0096488A /* Controllers */,
 				54D16D181C9A7CA500653A6B /* Main.storyboard */,
 			);
@@ -1536,6 +1570,7 @@
 			files = (
 				54D7B2C01C980241000AC3C5 /* build-libidn.sh in Resources */,
 				54D7B28D1C980028000AC3C5 /* Assets.xcassets in Resources */,
+				5451ACB91CA6534F0063965F /* YXInputView.xib in Resources */,
 				54D7B2BA1C98022E000AC3C5 /* README.txt in Resources */,
 				54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */,
 				54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */,
@@ -1660,6 +1695,7 @@
 				54D7B40F1C980345000AC3C5 /* XMPPProcessOne.m in Sources */,
 				54D7B4501C980345000AC3C5 /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
 				54D7B4841C982FE6000AC3C5 /* UIButton+WF.m in Sources */,
+				5451ACBD1CA6E1150063965F /* HttpTool.m in Sources */,
 				54D7B4611C980345000AC3C5 /* NSXMLElement+XEP_0297.m in Sources */,
 				54D7B43A1C980345000AC3C5 /* XMPPvCardTempModule.m in Sources */,
 				54D7B44A1C980345000AC3C5 /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
@@ -1683,6 +1719,7 @@
 				54D7B4451C980345000AC3C5 /* XMPPMessage+XEP_0085.m in Sources */,
 				54D7B4891C982FE6000AC3C5 /* UIView+WF.m in Sources */,
 				54D7B42D1C980345000AC3C5 /* XMPPMUC.m in Sources */,
+				5451ACB31CA651C00063965F /* YXChatViewController.m in Sources */,
 				54D7B4171C980345000AC3C5 /* XMPPRosterMemoryStorage.m in Sources */,
 				54CB90151C9E88A200B40E8B /* YXXMPPTool.m in Sources */,
 				54D7B4581C980345000AC3C5 /* XMPPBlocking.m in Sources */,
@@ -1701,6 +1738,7 @@
 				54D7B4471C980345000AC3C5 /* XMPPTransports.m in Sources */,
 				54D7B3FD1C980345000AC3C5 /* XMPPDigestMD5Authentication.m in Sources */,
 				54D7B2B51C98022E000AC3C5 /* DDFileLogger.m in Sources */,
+				5451ACB71CA653420063965F /* YXInputView.m in Sources */,
 				54D7B4121C980345000AC3C5 /* XMPPResourceCoreDataStorageObject.m in Sources */,
 				54D7B42B1C980345000AC3C5 /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
 				54D7B3FB1C980345000AC3C5 /* XMPPDeprecatedDigestAuthentication.m in Sources */,
@@ -1851,7 +1889,7 @@
 				GCC_PREFIX_HEADER = myXMPPFramework/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = myXMPPFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1877,7 +1915,7 @@
 				GCC_PREFIX_HEADER = myXMPPFramework/PrefixHeader.pch;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = myXMPPFramework/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

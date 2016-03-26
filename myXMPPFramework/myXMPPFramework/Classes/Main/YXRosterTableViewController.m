@@ -7,6 +7,7 @@
 //
 
 #import "YXRosterTableViewController.h"
+#import "YXChatViewController.h"
 
 @interface YXRosterTableViewController ()<NSFetchedResultsControllerDelegate>
 
@@ -103,6 +104,27 @@
     return cell;
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    XMPPUserCoreDataStorageObject *friend = _resultController.fetchedObjects[indexPath.row];
+    XMPPJID *friendJid = friend.jid;
+    
+    // 跳转到聊天控制器,将当前用户好友的jid作为参数传过去
+    [self performSegueWithIdentifier:@"Roster2Chat" sender:friendJid];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    id destVC = segue.destinationViewController;
+    
+    if ([destVC isKindOfClass:[YXChatViewController class]])
+    {
+        YXChatViewController *chatVC = (YXChatViewController *)destVC;
+        chatVC.friendJid = sender;
+    }
+}
+
 
 #pragma mark - 删除好友
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
