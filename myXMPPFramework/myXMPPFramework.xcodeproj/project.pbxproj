@@ -11,6 +11,9 @@
 		54229D441C9D8308009B471B /* YXMeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D431C9D8308009B471B /* YXMeTableViewController.m */; };
 		54229D471C9D9306009B471B /* YXUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D461C9D9306009B471B /* YXUserInfo.m */; };
 		54229D4C1C9DA147009B471B /* YXBaseLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */; };
+		542CC5F11CA77DD600785A4A /* YXMiLiaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 542CC5F01CA77DD600785A4A /* YXMiLiaoViewController.m */; };
+		542CC5F41CA7854000785A4A /* YXLoginStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 542CC5F31CA7854000785A4A /* YXLoginStatusView.m */; };
+		542CC5F61CA7854A00785A4A /* YXLoginStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 542CC5F51CA7854A00785A4A /* YXLoginStatusView.xib */; };
 		5442BFA61CA58B12008AAD81 /* YXAddContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */; };
 		5451ACB31CA651C00063965F /* YXChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5451ACB21CA651C00063965F /* YXChatViewController.m */; };
 		5451ACB71CA653420063965F /* YXInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5451ACB61CA653420063965F /* YXInputView.m */; };
@@ -180,6 +183,11 @@
 		54229D491C9D933C009B471B /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		54229D4A1C9DA147009B471B /* YXBaseLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXBaseLoginViewController.h; sourceTree = "<group>"; };
 		54229D4B1C9DA147009B471B /* YXBaseLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXBaseLoginViewController.m; sourceTree = "<group>"; };
+		542CC5EF1CA77DD600785A4A /* YXMiLiaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMiLiaoViewController.h; sourceTree = "<group>"; };
+		542CC5F01CA77DD600785A4A /* YXMiLiaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMiLiaoViewController.m; sourceTree = "<group>"; };
+		542CC5F21CA7854000785A4A /* YXLoginStatusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXLoginStatusView.h; sourceTree = "<group>"; };
+		542CC5F31CA7854000785A4A /* YXLoginStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXLoginStatusView.m; sourceTree = "<group>"; };
+		542CC5F51CA7854A00785A4A /* YXLoginStatusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXLoginStatusView.xib; sourceTree = "<group>"; };
 		5442BFA41CA58B12008AAD81 /* YXAddContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXAddContactTableViewController.h; sourceTree = "<group>"; };
 		5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXAddContactTableViewController.m; sourceTree = "<group>"; };
 		5451ACB11CA651C00063965F /* YXChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXChatViewController.h; sourceTree = "<group>"; };
@@ -561,6 +569,9 @@
 				5451ACB51CA653420063965F /* YXInputView.h */,
 				5451ACB61CA653420063965F /* YXInputView.m */,
 				5451ACB81CA6534F0063965F /* YXInputView.xib */,
+				542CC5F21CA7854000785A4A /* YXLoginStatusView.h */,
+				542CC5F31CA7854000785A4A /* YXLoginStatusView.m */,
+				542CC5F51CA7854A00785A4A /* YXLoginStatusView.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -605,6 +616,8 @@
 				5442BFA51CA58B12008AAD81 /* YXAddContactTableViewController.m */,
 				5451ACB11CA651C00063965F /* YXChatViewController.h */,
 				5451ACB21CA651C00063965F /* YXChatViewController.m */,
+				542CC5EF1CA77DD600785A4A /* YXMiLiaoViewController.h */,
+				542CC5F01CA77DD600785A4A /* YXMiLiaoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -1575,6 +1588,7 @@
 				54D16D191C9A7CA500653A6B /* Main.storyboard in Resources */,
 				54D16D161C9A7A6700653A6B /* Login.storyboard in Resources */,
 				54D7B28B1C980028000AC3C5 /* Main.storyboard in Resources */,
+				542CC5F61CA7854A00785A4A /* YXLoginStatusView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1751,6 +1765,7 @@
 				54D7B2D11C98024C000AC3C5 /* DDXMLElement.m in Sources */,
 				54D7B4341C980345000AC3C5 /* XMPPvCardTemp.m in Sources */,
 				54D7B41B1C980345000AC3C5 /* XMPPIQ+JabberRPC.m in Sources */,
+				542CC5F41CA7854000785A4A /* YXLoginStatusView.m in Sources */,
 				54D7B44B1C980345000AC3C5 /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				54D7B4671C980345000AC3C5 /* RFImageToDataTransformer.m in Sources */,
 				5442BFA61CA58B12008AAD81 /* YXAddContactTableViewController.m in Sources */,
@@ -1769,6 +1784,7 @@
 				54D7B41D1C980345000AC3C5 /* XMPPJabberRPCModule.m in Sources */,
 				54D7B2B31C98022E000AC3C5 /* DDAbstractDatabaseLogger.m in Sources */,
 				54D7B4411C980345000AC3C5 /* XMPPIQ+XEP_0066.m in Sources */,
+				542CC5F11CA77DD600785A4A /* YXMiLiaoViewController.m in Sources */,
 				54D7B43F1C980345000AC3C5 /* XMPPPubSub.m in Sources */,
 				54D7B40B1C980345000AC3C5 /* XMPPStream.m in Sources */,
 				54D7B40D1C980345000AC3C5 /* XMPPCoreDataStorage.m in Sources */,

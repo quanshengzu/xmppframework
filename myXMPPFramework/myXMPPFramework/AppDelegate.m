@@ -28,7 +28,7 @@
     NSString *sandbox = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).lastObject;
     NSLog(@"%@",sandbox);
     
-    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    //[DDLog addLogger:[DDTTYLogger sharedInstance]];
     
     [YXNavigationController setupNavigationBar];
     
@@ -42,8 +42,20 @@
         self.window.rootViewController = storyboard.instantiateInitialViewController;
         
         // 连接到服务器
-        [[YXXMPPTool sharedYXXMPPTool] xmppUserLogin:nil];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[YXXMPPTool sharedYXXMPPTool] xmppUserLogin:nil];
+            
+        });
+        
     }
+    
+    // 注册本地通知
+    UIUserNotificationCategory *category = [[UIUserNotificationCategory alloc] init];
+    
+    
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
+    
+    [application registerUserNotificationSettings:settings];
     
     
     return YES;

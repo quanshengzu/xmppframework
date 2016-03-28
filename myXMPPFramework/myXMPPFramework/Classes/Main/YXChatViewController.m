@@ -162,7 +162,7 @@
 - (void)sendMessage:(NSString *)message bodyType:(NSString *)bodyType
 {
     XMPPMessage *msg = [XMPPMessage messageWithType:@"chat" to:self.friendJid];
-    [msg addAttributeWithName:bodyType stringValue:@"bodyType"];
+    [msg addAttributeWithName:@"bodyType" stringValue:bodyType];
     
     [msg addBody:message];
     
@@ -174,13 +174,16 @@
 #pragma mark - 表格滚动到底部
 - (void)scrollToBottom
 {
-    if (_resultController.fetchedObjects.count > 0)
+    
+    NSInteger lastRow = _resultController.fetchedObjects.count - 1;
+    if (lastRow < 0)
     {
-        NSInteger lastRow = _resultController.fetchedObjects.count - 1;
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
-        
-        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+        return;
     }
+
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:lastRow inSection:0];
+    
+    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     
 }
 
@@ -236,6 +239,7 @@
     
     // 判断是图片还是文本
     NSString *bodyType = [friend.message attributeStringValueForName:@"bodyType"];
+    NSLog(@"bodyType = %@",bodyType);
     
     if ([bodyType isEqualToString:@"image"])
     {
@@ -243,25 +247,24 @@
         // 防止复用
         cell.textLabel.text = nil;
         
-    } else if ([bodyType isEqualToString:@"text"])
-    {
-        // 判断消息的发送者
-        if (friend.outgoing.boolValue)
-        {
-            // 发送消息
-            // 赋值
-            cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",[YXUserInfo sharedYXUserInfo].username,friend.body];
-            
-        } else
-        {
-            // 接受消息
-            cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",self.friendJid.user,friend.body];
-            
-        }
-        // 防止复用
-        cell.imageView.image = nil;
-
     }
+    // 判断消息的发送者
+    if (friend.outgoing.boolValue)
+    {
+        // 发送消息
+        // 赋值
+        cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",[YXUserInfo sharedYXUserInfo].username,friend.body];
+        
+    } else
+    {
+        // 接受消息
+        cell.textLabel.text = [NSString stringWithFormat:@"%@:%@",self.friendJid.user,friend.body];
+        
+    }
+    // 防止复用
+    cell.imageView.image = nil;
+
+    
     
     
     return cell;

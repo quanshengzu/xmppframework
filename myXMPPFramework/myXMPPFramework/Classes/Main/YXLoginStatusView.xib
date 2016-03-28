@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="20c-5v-Vph" customClass="YXLoginStatusView">
+            <rect key="frame" x="0.0" y="0.0" width="112" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="n2h-zS-xe3">
+                    <rect key="frame" x="10" y="14" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e24-gE-vNa">
+                    <rect key="frame" x="50" y="13.5" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="n2h-zS-xe3" firstAttribute="leading" secondItem="20c-5v-Vph" secondAttribute="leading" constant="10" id="5lk-aV-9Ot"/>
+                <constraint firstItem="e24-gE-vNa" firstAttribute="centerY" secondItem="20c-5v-Vph" secondAttribute="centerY" id="L7O-yU-1EU"/>
+                <constraint firstItem="e24-gE-vNa" firstAttribute="leading" secondItem="n2h-zS-xe3" secondAttribute="trailing" constant="20" id="UKa-RF-JRM"/>
+                <constraint firstItem="n2h-zS-xe3" firstAttribute="centerY" secondItem="20c-5v-Vph" secondAttribute="centerY" id="bVy-ab-29G"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="indicator" destination="n2h-zS-xe3" id="ifs-MH-zHZ"/>
+                <outlet property="showLabel" destination="e24-gE-vNa" id="h5B-gC-iaL"/>
+            </connections>
+            <point key="canvasLocation" x="58" y="242"/>
+        </view>
+    </objects>
+</document>

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--米聊-->
         <scene sceneID="Ptt-Va-Akk">
             <objects>
-                <tableViewController id="nUR-dC-alV" sceneMemberID="viewController">
+                <tableViewController id="nUR-dC-alV" customClass="YXMiLiaoViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="o6Z-uh-8AU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,17 +28,17 @@
                             <outlet property="delegate" destination="nUR-dC-alV" id="XwM-YL-PMK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="l1v-ck-YW3"/>
+                    <navigationItem key="navigationItem" title="米聊" id="l1v-ck-YW3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6tg-rP-3KQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609" y="-660"/>
         </scene>
-        <!--微信-->
+        <!--米聊-->
         <scene sceneID="Hxn-GU-d5S">
             <objects>
                 <navigationController id="eeh-Bu-tOw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="微信" image="tabbar_mainframe" badgeValue="12" selectedImage="tabbar_mainframeHL" id="hiO-h9-1QX"/>
+                    <tabBarItem key="tabBarItem" title="米聊" image="tabbar_mainframe" badgeValue="12" selectedImage="tabbar_mainframeHL" id="hiO-h9-1QX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bD0-Gq-YhB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

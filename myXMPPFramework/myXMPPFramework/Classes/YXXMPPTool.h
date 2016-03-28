@@ -10,12 +10,15 @@
 #import "Singleton.h"
 #import "XMPPFramework.h"
 
+extern NSString  *YXLoginStatusChange;
+
 @interface YXXMPPTool : NSObject
 
 singleton_interface(YXXMPPTool)
 
 // 登录结果的枚举
 typedef enum {
+    XMPPResultTypeConnecting,// 正在登陆中...
     XMPPResultTypeSuccess,// 登录成功
     XMPPResultTypeFailure,// 登录失败
     XMPPResultTypeNetError, // 网络故障

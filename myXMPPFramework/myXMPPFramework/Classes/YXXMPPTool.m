@@ -33,6 +33,8 @@
  
  */
 
+ NSString *YXLoginStatusChange = @"YXLoginStatusChange";
+
 @interface YXXMPPTool ()<XMPPStreamDelegate>
 
 // 保存登录结果block
@@ -117,11 +119,15 @@ singleton_implementation(YXXMPPTool)
 #pragma mark -连接服务器，向服务器发送myJID
 - (void)connectToHost
 {
+    // 发出通知,正在登录中...
+    [self postNotification:XMPPResultTypeConnecting];
+    
     YXLog(@"正在连接到服务器...");
     if (_xmppStream == nil)
     {
         [self setupxmppStream];
     }
+    
     
     // 连接服务器前必须要向服务器发送myJID,否则会报错error:Error Domain=XMPPStreamErrorDomain Code=2 "You must set myJID before calling connect." UserInfo={NSLocalizedDescription=You must set myJID before calling connect.}
     /*
@@ -216,6 +222,8 @@ singleton_implementation(YXXMPPTool)
 #pragma mark - 连接失败的回调
 - (void)xmppStreamDidDisconnect:(XMPPStream *)sender withError:(NSError *)error
 {
+    [self postNotification:XMPPResultTypeNetError];
+    
     YXLog(@"与主机断开连接");
     YXLog(@"error:%@",error);
     
@@ -228,6 +236,9 @@ singleton_implementation(YXXMPPTool)
 #pragma mark - 密码认证成功后的回调
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender
 {
+    // 发出通知，登陆成功
+    [self postNotification:XMPPResultTypeSuccess];
+    
     YXLog(@"密码认证成功");
     
     // 授权成功后，向服务器发送"在线"消息
@@ -245,6 +256,8 @@ singleton_implementation(YXXMPPTool)
 #pragma mark - 登录失败
 - (void)xmppStream:(XMPPStream *)sender didNotAuthenticate:(DDXMLElement *)error
 {
+    [self postNotification:XMPPResultTypeFailure];
+    
     YXLog(@"登录失败");
     YXLog(@"error:%@",error);
     
@@ -319,6 +332,42 @@ singleton_implementation(YXXMPPTool)
     // 3.连接到服务器
     [self connectToHost];
 }
+
+#pragma mark - 只要接收到好友的消息就会调用
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
+{
+    // 如果当前程序不在前台，就发出一个本地通知
+    
+    if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground)
+    {
+        
+        NSLog(@"接收后台消息:%@",message);
+        // In iOS 8.0 and later, your application must register for user notifications using -[UIApplication registerUserNotificationSettings:] before being able to schedule and present UILocalNotifications
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        // 设置本地通知的参数
+        localNotification.alertBody = [NSString stringWithFormat:@"%@:%@",message.fromStr,message.body];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        
+        // 设置应用图标右上角的数字
+        localNotification.applicationIconBadgeNumber = message.accessibilityElementCount;
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        
+        // 调用本地通知
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        
+        
+    }
+    
+}
+
+#pragma mark - 发送通知
+- (void)postNotification:(XMPPResultType)type
+{
+    NSDictionary *userInfo = @{@"loginStatus":@(type)};
+    [[NSNotificationCenter defaultCenter] postNotificationName:YXLoginStatusChange object:nil userInfo:userInfo];
+}
+
+
 
 - (void)dealloc
 {
