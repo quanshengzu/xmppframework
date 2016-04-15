@@ -35,7 +35,7 @@
 
  NSString *YXLoginStatusChange = @"YXLoginStatusChange";
 
-@interface YXXMPPTool ()<XMPPStreamDelegate>
+@interface YXXMPPTool ()<XMPPStreamDelegate,XMPPStreamManagementStorage>
 
 // 保存登录结果block
 @property (nonatomic, copy)XMPPResultBlock xmppResultBlock;
@@ -51,6 +51,12 @@
 
 // 消息模块
 @property (nonatomic, strong)XMPPMessageArchiving *message;
+
+// 流管理模块
+@property (nonatomic, strong)XMPPStreamManagement *xmppStreamManagement;
+
+// 流管理模块存储
+@property (nonatomic, strong)XMPPStreamManagementMemoryStorage *xmppStreamManagementMemoryStorage;
 
 
 
@@ -80,30 +86,45 @@ singleton_implementation(YXXMPPTool)
     // 创建xmppStream
     _xmppStream = [[XMPPStream alloc] init];
     
+    // 设置心跳包时间
+    _xmppStream.keepAliveInterval = 30;
+    
+    // 允许xmpp在后台运行
+    _xmppStream.enableBackgroundingOnSocket = YES;
+    
     /*************添加模块*************/
 #warning 添加模块后一定要激活
     // 0.添加自动连接模块
     _reconnect = [[XMPPReconnect alloc] init];
     [_reconnect activate:_xmppStream];
     
-    // 1.添加电子名片模块
+    // 1.添加流管理模块，用于流恢复跟消息确认(可以接收到离线消息)
+    _xmppStreamManagementMemoryStorage = [[XMPPStreamManagementMemoryStorage alloc] init];
+    _xmppStreamManagement = [[XMPPStreamManagement alloc] initWithStorage:_xmppStreamManagementMemoryStorage];
+    _xmppStreamManagement.autoResume = YES;
+    [_xmppStreamManagement addDelegate:self delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)];
+    
+    // 激活
+    [_xmppStreamManagement activate:_xmppStream];
+    
+    // 2.添加电子名片模块
     _vCardStorge = [[XMPPvCardCoreDataStorage alloc] init];
     _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorge];
     // 激活
     [_vCard activate:_xmppStream];
     
-    // 2.添加电子名片头像模块
+    // 3.添加电子名片头像模块
     _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
     // 激活
     [_avatar activate:_xmppStream];
     
-    // 3.添加花名册模块
+    // 4.添加花名册模块
     _rosterStorge = [[XMPPRosterCoreDataStorage alloc] init];
     _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterStorge];
     // 激活
     [_roster activate:_xmppStream];
     
-    // 4.添加聊天数据模块
+    // 5.添加聊天数据模块
     _messageStorage = [[XMPPMessageArchivingCoreDataStorage alloc] init];
     _message = [[XMPPMessageArchiving alloc] initWithMessageArchivingStorage:_messageStorage];
     // 激活
@@ -250,6 +271,9 @@ singleton_implementation(YXXMPPTool)
         _xmppResultBlock(XMPPResultTypeSuccess);
     }
     
+#warning 登录成功后启用流管理
+    [_xmppStreamManagement enableStreamManagementWithResumption:YES maxTimeout:0];
+    
     
 }
 
@@ -337,7 +361,6 @@ singleton_implementation(YXXMPPTool)
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message
 {
     // 如果当前程序不在前台，就发出一个本地通知
-    
     if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground)
     {
         

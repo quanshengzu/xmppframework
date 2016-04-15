@@ -51,8 +51,6 @@
     
     // 注册本地通知
     UIUserNotificationCategory *category = [[UIUserNotificationCategory alloc] init];
-    
-    
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeBadge | UIUserNotificationTypeSound | UIUserNotificationTypeAlert categories:nil];
     
     [application registerUserNotificationSettings:settings];

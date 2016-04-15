@@ -28,6 +28,8 @@
     // 从花名册数据库中读取数据
     [self loadRosterData];
     
+    [[YXXMPPTool sharedYXXMPPTool].roster fetchRoster];
+    
 }
 
 - (void)loadRosterData
